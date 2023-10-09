@@ -13,26 +13,6 @@ async function post(inputNombreusuario, inputcontrasena, inputTipo){
     })
 }
 
-const promesa = post()
-
-promesa
-    .then(res => {
-        console.log(res.ok)
-    
-        $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
-        res.json().then(data => {
-                //GUARDAR EL ID DEL USUARIO EN EL LOCAL STORAGE
-                //PEDIR EL AVATAR Y GUARDARLO EN EL LOCAL STORAGE
-        })
-        
-    })
-    .catch(() => {
-        $('.msg').text('Existe un error en la información');
-        showAlert();
-        console.log('error')
-    })
-    
-
 $(document).ready(function() {
    
     function showAlert(){
@@ -71,7 +51,25 @@ $(document).ready(function() {
         if(isValid) 
         {
             $(this).unbind('submit').submit(); /*ESTO SE QUITA*/
-            post(inputNombreusuario, inputcontrasena, inputTipo);
+            const promesa=post(inputNombreusuario, inputcontrasena, inputTipo);
+
+            promesa
+                .then(res => {
+                    console.log(res.ok)
+                    res.json().then(data => {
+                        sessionStorage.setItem('idUsuario', data.id); //GUARDAR EL ID DEL USUARIO EN EL LOCAL STORAGE
+                        sessionStorage.setItem('fotoPerfil', data.avatar);    //PEDIR EL AVATAR Y GUARDARLO EN EL LOCAL STORAGE
+                    })
+                
+                    $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
+                    
+                    
+                })
+                .catch(() => {
+                    $('.msg').text('Existe un error en la información');
+                    showAlert();
+                    console.log('error')
+                })
         }
     });
 });

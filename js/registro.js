@@ -115,30 +115,24 @@ $(document).ready(function() {
         }
 
         if(isValid) {
-            //$(this).unbind('submit').submit(); /*ESTO SE QUITA*/ 
             const promesa =  post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, tipo);
 
             promesa
                 .then(res => {
                     console.log(res.ok)
-                    
-                    if(res.ok)
-                    {
-                        $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
-                    }
-                    else
-                    {
-                        $('.msg').text('El nombre de usuario ya existe');
-                        showAlert();
-                    }
-
-                    res.json()
+            
+                    $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
+                
+                    $('.msg').text('Cuenta creada satisfactoriamente');
+                    showAlert();
                 })
                 .then(data => {
                     console.log(data)
                     variable = data
                 })
                 .catch(() => {
+                    $('.msg').text('El nombre de usuario ya existe o usted ya existe en el sistema');
+                    showAlert();
                     console.log('error')
                 })
                 
