@@ -97,23 +97,6 @@ header
     z-index: 10;
 }
 
-#estrella
-{
-    height: 20px;
-    margin-right: 48px;
-}
-
-#tienda
-{
-    height: 20px;
-    margin-right: 55px;
-}
-
-#porcentaje
-{
-    height: 20px;
-    margin-right: 30px;
-}
 
 .busquedaRapida
 {
@@ -142,25 +125,23 @@ header
     padding-left: 10px; /* Este es el espacio que se añade a la izquierda entre el borde y la imagen */
 }
 
-.textoP
+#res
 {
-  position: absolute;
+    position: absolute;
+    top: 8%;
+    left: 4%;
+    font-size: xx-large;
 }
 
-#filtro
-{
-    top: 38%;
-    left: 60px;
-}
 #tiendas
 {
-    top: 45%;
-    left: 60px;
+    position: relative;
+    left: 40px;
 }
 
-#promociones
+#productos
 {
-    top: 85%;
+    position: relative;
     left: 40px;
 }
 
@@ -169,6 +150,7 @@ header
     display: inline-block;
     vertical-align: top;  /* Asegura que se alineen por la parte superior */
 }
+
 .circuloproducto 
 {   
     aspect-ratio: 1/1;
@@ -201,33 +183,10 @@ header
 }
 
 .scrollBoxProducto{
-    top: 11%;
      max-width: 100%; 
      width:  100%;  /* o el valor que desees */
-     height: 202px;
-     position: absolute;
-     overflow-x: auto;   /* Habilita el desplazamiento horizontal */
-     overflow-y: hidden; /* Desactiva el desplazamiento vertical */
-     white-space: nowrap;  /* Esto evita que los hijos salten a la siguiente línea */
- }
- 
- .scrollBoxProducto::-webkit-scrollbar {
-     width: 0px;  /* Hace la barra de desplazamiento efectivamente invisible en WebKit browsers */
-     background: transparent;  /* Esconde el fondo */
- }
- 
- .scrollBoxProducto::-webkit-scrollbar-thumb {
-     background: transparent;  /* Esconde el thumb (la barra que se mueve) */
- }
- 
- /* Para Firefox */
- .scrollBoxProducto {
-     scrollbar-width: none;  /* Esconde la barra de desplazamiento en Firefox */
- }
- 
- /* En IE y Edge */
- .scrollBoxProducto {
-     -ms-overflow-style: none;  /* Esconde la barra de desplazamiento en IE y Edge */
+     position: relative;
+     left: 3%;
  }
 
 .popUpProducto
@@ -268,6 +227,7 @@ body.overlayActive {
 {
     height: 30px;
 }
+
 #equisButton
 {
     margin-top: 5px;
@@ -638,7 +598,7 @@ body.overlayActive {
 {
     margin-right: 65px;
 }
-#tiendas
+#tiendas2
 {
     top: 48%; 
     left: 2.8%;
@@ -739,35 +699,11 @@ a {
 }
 
 .scrollBoxTienda {
-   
-   top: 54.5%;
-   overflow-x: auto;   /* Habilita el desplazamiento horizontal */
-   overflow-y: hidden; /* Desactiva el desplazamiento vertical */
     max-width: 100%; 
     width:  100%;  /* o el valor que desees */
     height: 200px;
-    position: absolute;
-    white-space: nowrap;
- 
-}
-
-.scrollBoxTienda::-webkit-scrollbar {
-    width: 0px;  /* Hace la barra de desplazamiento efectivamente invisible en WebKit browsers */
-    background: transparent;  /* Esconde el fondo */
-}
-
-.scrollBoxTienda::-webkit-scrollbar-thumb {
-    background: transparent;  /* Esconde el thumb (la barra que se mueve) */
-}
-
-/* Para Firefox */
-.scrollBoxTienda {
-    scrollbar-width: none;  /* Esconde la barra de desplazamiento en Firefox */
-}
-
-/* En IE y Edge */
-.scrollBoxTienda {
-    -ms-overflow-style: none;  /* Esconde la barra de desplazamiento en IE y Edge */
+    left: 3%;
+    position: relative;
 }
 
 .minitienda {
@@ -775,3 +711,31 @@ a {
     display: inline-block;
     vertical-align: top;  /* Asegura que se alineen por la parte superior */
 }
+
+#resultado {
+    left: 1%;
+    top: 20%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-height: 79vh; /* Establece la altura máxima como un porcentaje de la altura de la ventana */
+    max-width: 100%;
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+#resultado::-webkit-scrollbar {
+    width: 10px; 
+}
+
+#resultado::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 4px; 
+}
+
+#resultado::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+

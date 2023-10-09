@@ -1,3 +1,13 @@
+const input = document.getElementById('barrabusqueda');
+
+input.addEventListener('keydown', function(event) {
+    if (event.key === "Enter" && input.value.trim() !== "") {
+        // Redireccionar a la nueva pantalla
+        window.location.href = "../html/Busqueda.html";
+    }
+});
+
+
 // Definición de funciones y variables
 var getElem = function(id) {
   return document.getElementById(id);
@@ -205,7 +215,7 @@ promesaInformacionProducto
             <input type="radio" id="tienda" name="TiendaSeleccion" value="Tienda1">
       </div>
       `;
-
+      
       //REVISAR
       container.append('scrollBoxinner');
     }
@@ -218,6 +228,16 @@ $(document).ready(function() {
   generateProducts(".scrollBoxProducto", 'popup');
 
   generateTiendas(".scrollBoxTienda");
+
+  asignarFoto();
+
+  function asignarFoto()
+  {
+    if (sessionStorage.getItem('fotoPerfil')) 
+    {
+      document.getElementById('userimg').src = sessionStorage.getItem('fotoPerfil');
+    }
+  }
 
   $('#basura').on('click', function() {
     $('#cantidadProducto').val('1');
@@ -239,5 +259,4 @@ $(document).ready(function() {
 
 });
 
-  
 });

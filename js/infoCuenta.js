@@ -77,7 +77,15 @@ $(document).ready(function() {
             }
         });
 
-        sessionStorage.setItem('fotoPerfil', document.getElementById('foto').src);
+        if (sessionStorage.getItem('fotoPerfil')) 
+        {
+            document.getElementById('foto').src = sessionStorage.getItem('fotoPerfil');
+        }
+        else
+        {
+            sessionStorage.setItem('foto', document.getElementById('foto').src);
+        }
+    
     }
 
     initializeSessionStorage();
@@ -189,7 +197,7 @@ $(document).ready(function() {
 
     if(isValid) {
         const promesaUpdateInformacionUsuario = postInfoUsuario(inputNombreusuario, inputcontrasena, $('#nombre').val().trim(), $('#apellido').val().trim(), inputtelefono);
-        
+        saveToSessionStorage(); //ESTO SE QUITA
         promesaUpdateInformacionUsuario
         .then(res => {
             saveToSessionStorage();
