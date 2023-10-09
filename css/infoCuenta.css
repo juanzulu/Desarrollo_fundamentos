@@ -106,6 +106,7 @@ header
 
 #mas
 {
+  
     position: absolute;
     width: 1.6%;
     height: 3%;
@@ -115,6 +116,10 @@ header
     background-color: rgb(134, 220, 49);
     color: #FFF3D7;
     border: none;
+
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center; 
 }
     
 #nombreU
@@ -701,9 +706,9 @@ a {
     line-height: 40px;
   }
 
-#DIVAvatares
+.pestanaAvatares
 {
-    /*display: none;*/
+    display: none;
     position: absolute;
     background: #ffffff;
     top: 2%;
@@ -737,11 +742,13 @@ body.overlayActive {
 
 #equis
 {
+
   height: 30px;
 }
 
 #equisButton
 {
+  z-index: 2000;
   margin-top: 5px;
   position: absolute;
   right: 1.7%;
@@ -760,6 +767,7 @@ body.overlayActive {
     height: 150px;
     border: 6px solid rgb(244, 164, 79);
     overflow: hidden; 
+    z-index: 20000;
 }
 
 .fotoAvatar
@@ -800,31 +808,31 @@ body.overlayActive {
 
 #Avatar6
 {
-  top: 60%;
+  top: 55%;
   left: 9%;
 }
 
 #Avatar7
 {
-  top: 60%;
+  top: 55%;
   left: 26%;
 }
 
 #Avatar8
 {
-  top: 60%;
+  top: 55%;
   left: 43%;
 }
 
 #Avatar9
 {
-  top: 60%;
+  top: 55%;
   left: 60%;
 }
 
 #Avatar10
 {
-  top: 60%;
+  top: 55%;
   left: 77%;
 }
 

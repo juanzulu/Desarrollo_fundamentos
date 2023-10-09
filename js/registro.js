@@ -19,33 +19,6 @@ async function post(inputID, inputNombreusuario, inputcontrasena, inputnombre, i
     })
 }
 
-const promesa = post()
-
-promesa
-    .then(res => {
-        console.log(res.ok)
-        
-        if(res.ok)
-        {
-            $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
-        }
-        else
-        {
-            $('.msg').text('El nombre de usuario ya existe');
-            showAlert();
-        }
-
-        res.json()
-    })
-    .then(data => {
-        console.log(data)
-        variable = data
-    })
-    .catch(() => {
-        console.log('error')
-    })
-    
-
 $(document).ready(function() {
    
     function showAlert(){
@@ -142,8 +115,33 @@ $(document).ready(function() {
         }
 
         if(isValid) {
-            $(this).unbind('submit').submit(); /*ESTO SE QUITA*/
-            post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, tipo);
+            //$(this).unbind('submit').submit(); /*ESTO SE QUITA*/ 
+            const promesa =  post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, tipo);
+
+            promesa
+                .then(res => {
+                    console.log(res.ok)
+                    
+                    if(res.ok)
+                    {
+                        $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
+                    }
+                    else
+                    {
+                        $('.msg').text('El nombre de usuario ya existe');
+                        showAlert();
+                    }
+
+                    res.json()
+                })
+                .then(data => {
+                    console.log(data)
+                    variable = data
+                })
+                .catch(() => {
+                    console.log('error')
+                })
+                
         }
     });
 });
