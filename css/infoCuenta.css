@@ -700,5 +700,154 @@ a {
     font-size: 22px;
     line-height: 40px;
   }
+
+#DIVAvatares
+{
+    /*display: none;*/
+    position: absolute;
+    background: #ffffff;
+    top: 2%;
+    margin-top: 5px;
+    height: 600px;
+    z-index: 200;
+    padding: 10px;
+    width: 92%;
+    left: 2%;
+    margin-left: 10px;
+    -webkit-box-shadow: 0px 0px 0px 9900px rgba(255, 248, 196, 0.5);
+    box-shadow: 0px 0px 0px 9900px rgba(230, 179, 69, 0.381);
+    pointer-events: auto;  /* Esto asegura que el popup siga siendo interactivo */
+}
   
+body.overlayActive {
+  pointer-events: none;
+}
+
+#DIVAvatares:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  max-height: 100%;
+
+}
+
+#equis
+{
+  height: 30px;
+}
+
+#equisButton
+{
+  margin-top: 5px;
+  position: absolute;
+  right: 1.7%;
+  background-color: transparent;
+  border: none;
+}
+
+.circuloAvatar
+{   
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 200px;
+    position: absolute;
+    top: 19%;
+    left: 6%;
+    height: 150px;
+    border: 6px solid rgb(244, 164, 79);
+    overflow: hidden; 
+}
+
+.fotoAvatar
+{
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center; /* Centra la imagen */
+}
+
+
+#Avatar5
+{
+  left: 9%;
+}
+
+#Avatar1
+{
+  left: 26%;
+}
+
+#Avatar2
+{
+  left: 43%;
+}
+
+#Avatar3
+{
+  left: 60%;
+}
+
+#Avatar4
+{
+  left: 77%;
+}
+
+#Avatar6
+{
+  top: 60%;
+  left: 9%;
+}
+
+#Avatar7
+{
+  top: 60%;
+  left: 26%;
+}
+
+#Avatar8
+{
+  top: 60%;
+  left: 43%;
+}
+
+#Avatar9
+{
+  top: 60%;
+  left: 60%;
+}
+
+#Avatar10
+{
+  top: 60%;
+  left: 77%;
+}
+
+#cambiarAvatar
+{
+  display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 89.5%;
+    width: 15%;
+    height: 6%;
+    color: #ffffff;
+    background-color:  #6ba1ed;
+    border: none;
+    border-top-left-radius: 5px;   /* Top-left corner rounded */
+    border-bottom-left-radius: 5px; /* Bottom-left corner rounded */
+    border-top-right-radius: 5px;   /* Top-left corner rounded */
+    border-bottom-right-radius: 5px; /* Bottom-left corner rounded */
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
+}
+
+
+
   

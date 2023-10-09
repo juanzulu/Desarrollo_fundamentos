@@ -7,7 +7,7 @@ async function post(inputID, inputNombreusuario, inputcontrasena, inputnombre, i
         },
         body: JSON.stringify({
             ID: inputID,
-            tipo: inputTipo,j
+            tipo: inputTipo,
             NUsario: inputNombreusuario,
             contrasena: inputcontrasena,
             nombre: inputnombre,
