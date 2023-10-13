@@ -1,0 +1,322 @@
+/*si*/
+html {
+    height: 100%;
+    width: 100%;
+}
+
+/*si*/
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*si*/
+section {
+    height: 100%;
+    position: relative;
+}
+
+/*si*/
+header
+{
+    color: rgb(18, 2, 4);
+    background-color: #FFF3D7;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    gap: 40px;
+    z-index: 10;
+}
+
+/*si*/
+#logo
+{
+    height: 60px;
+    margin: 5px;
+    position: absolute;
+    left: 8px;
+}
+
+/*si*/
+#fotoPerfil {
+    height: 38px;
+    position: absolute;
+    top: 15px;
+    right: 9%;     
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 200px;
+    border: 3px solid rgb(79, 156, 244);
+}
+
+
+/*si*/
+#userimg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* Centra la imagen */
+}
+
+
+/*si es el nombre */
+#slogan1
+{
+    font-family: 'Bowlby One', cursive;
+    font-family: 'Manjari', sans-serif;
+    font-family: 'Shantell Sans', cursive;
+    font-size: x-large;
+    position: absolute;
+    left: 5%;
+    top: 0%;
+}
+
+
+/*si*/
+#settings
+{
+    height: 55px;
+    position: absolute;
+    top: 5px;
+    right: 5.06%;
+}
+
+
+/*si*/
+#notificaciones
+{
+    height: 45px;
+    position: absolute;
+    top: 10px;
+    right: 2%;
+}
+
+
+/*si por ahora*/
+.btnTop
+{
+    background-color: transparent;
+    font-family: Arial;
+    border: none;
+    font-size: larger;
+}
+
+/*si*/
+.pemenu
+{
+    position: sticky;
+    height: 100%;
+    width: 380px;
+    z-index: 5;  
+    background-color: #FFF3D7;
+    padding: 10px;
+}
+
+/*si*/
+#arrow
+{
+    background-color: transparent;
+    border: none;
+    height: 18px;
+    margin-left: 210px;
+}
+
+/*si*/
+.botonmenu
+{
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    height: 50px;
+    cursor: pointer;
+}
+
+/*si*/
+.textoBotonm
+{
+    margin-right: 28px;
+}
+
+.botonmenu:hover {
+    background: linear-gradient(90deg, #ffce56, #fa9399);
+}
+
+
+/*si*/
+.textoBotonp
+{
+    margin-right: 12px;
+}
+
+/*si*/
+#tiendas
+{
+    top: 48%; 
+    left: 2.8%;
+}
+
+/*si*/
+.textoBotont
+{
+    margin-right: 2px;
+}
+
+/*si*/
+#Historial
+{
+    top: 57%; 
+}
+
+/*si*/
+.textoBotonh
+{
+    margin-right: 45px;
+}
+
+/*si*/
+#estado
+{
+    top: 65%; 
+}
+
+/*si*/
+.textoBotone
+{
+    margin-right: 16px;
+}
+
+/*si*/
+.textoBotoni
+{
+    margin-right: 8px;
+}
+
+/*si*/
+#textoBotonb
+{
+    margin-right: 8px;
+}
+
+/*si*/
+.textoBotonf
+{
+    margin-right: 45px;
+}
+
+.textoBotonk
+{
+    margin-right: 70px; 
+}
+
+.textoBotoni
+{
+    margin-right: 20px;
+}
+
+.textoBotonb
+{
+    margin-right: 20px; 
+}
+
+/*si*/
+#hr1menu
+{
+  margin-top: 16%;
+}
+
+#hr2menu
+{
+  margin-top: 15%;
+}
+
+#restaurant
+{
+  margin-top: 0%;
+}
+
+#kioskos
+{
+  margin-top: 4%;
+}
+
+#Opsalud
+{
+  margin-top: 4%;
+}
+
+#Cafeterias
+{
+  margin-top: 4%;
+}
+
+#Especialidad
+{
+  margin-top: 4%;
+}
+
+#Ubica
+{
+  margin-top: 4%;
+}
+
+#mapa
+{
+  margin-top: 4%;
+  background: linear-gradient(90deg, #ffce56, #fa9399);
+}
+
+#volver_menu
+{
+    color: black;
+    margin-top: 0%;
+    text-decoration: none;
+    font-size: 0.8rem;
+
+}
+
+#cerrar_sesion
+{
+  margin-top: 4%;
+}
+
+
+/* para el mapa de la u */
+.contenedor {
+    position: relative;
+    width: 870px;
+    height: 650px;
+    top: 60px;
+    left: 500px;
+    background-color: transparent;
+}
+
+#map_uni {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Puedes ajustar este valor según sea necesario */
+}
+
+.btnMidlle {
+    position: absolute;
+    cursor: default;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none; /* Elimina el borde del botón si no lo necesitas */
+    z-index: 2; /* Asegúrate de que el botón esté por encima del mapa, ajusta según sea necesario */
+}
+
+
+
