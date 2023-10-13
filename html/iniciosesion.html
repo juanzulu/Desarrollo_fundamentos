@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio  de Sesion</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
     <img id="fondoSesion" src="../imagenes/fondoIniciosesion .png" alt="fondo">
@@ -28,8 +29,7 @@
             </p>
         </div>
 
-            <form action="/Users/sophiaaristizabal/Documents/GitHub/Desarrollo_fundamentos/html/MenuUsuario.html" class="camposLlenar">
-                <input type="text" id="ID" class="texto" placeholder="ID estudiante/profesor" required>
+            <form action="../html/MenuUsuario.html" class="camposLlenar">
                 <input type="text" id="Nombreusuario" class="texto" placeholder="Nombre de usuario" required>
                 <input type="password" id="contrasena" class="texto"placeholder="Contraseña" required>
                 <button id="continuar" type="submit">
@@ -48,7 +48,7 @@
                Cliente
             </p>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" id="Tipo">
                 <span class="slider"></span>
             </label>
             <p>
@@ -56,19 +56,26 @@
             </p> 
         </div>
         
+        <div class="alert">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg">ATENCION!!</span>
+            <div class="close-btn">
+               <span class="fas fa-times"> X </span>
+            </div>
+         </div>
 
-        
-
-        <a id="olvideContrasena" href="/Users/sophiaaristizabal/Documents/GitHub/Desarrollo_fundamentos/html/RecuperarContrasena.html">
+        <a id="olvideContrasena" href="../html/RecuperarContrasena.html">
             olvidé mi contraseña 
         </a>
         <div class="vertical-line"></div>
-        <a id="Registrarme" href="/Users/sophiaaristizabal/Documents/GitHub/Desarrollo_fundamentos/html/Registro.html">
+        <a id="Registrarme" href="../html/Registro.html">
             registrarme
         </a>
         <hr id="final">
 
-    </section>
 
+
+    </section>
+    <script src="../js/inicioSesion.js"></script>
 </body>
 </html>

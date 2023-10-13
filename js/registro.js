@@ -1,3 +1,24 @@
+
+async function post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, inputTipo){
+    return await fetch('http://localhost:8080/crear-usuario', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            ID: inputID,
+            tipo: inputTipo,
+            NUsario: inputNombreusuario,
+            contrasena: inputcontrasena,
+            nombre: inputnombre,
+            apellido: inputapellido,
+            telefeono: inputtelefono,
+            correo: inputcorreo,
+            fecha: inputfecha
+        })
+    })
+}
+
 $(document).ready(function() {
    
     function showAlert(){
@@ -33,6 +54,13 @@ $(document).ready(function() {
         var inputfecha= $('#fecha').val();
         var year = parseInt(inputfecha.split('-')[0]);    // Split the date string at '-' and take the first part
 
+        var tipo;
+
+        if($('#Tipo').is(':checked')) {
+            tipo="domiciliario";
+        } else {
+            tipo="cliente";
+        }
         //evaluar si es un numero
         if(isNaN(inputID) || inputID.trim() === "") 
         {
@@ -87,7 +115,27 @@ $(document).ready(function() {
         }
 
         if(isValid) {
-            $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
+            const promesa =  post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, tipo);
+
+            promesa
+                .then(res => {
+                    console.log(res.ok)
+            
+                    $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
+                
+                    $('.msg').text('Cuenta creada satisfactoriamente');
+                    showAlert();
+                })
+                .then(data => {
+                    console.log(data)
+                    variable = data
+                })
+                .catch(() => {
+                    $('.msg').text('El nombre de usuario ya existe o usted ya existe en el sistema');
+                    showAlert();
+                    console.log('error')
+                })
+                
         }
     });
 });

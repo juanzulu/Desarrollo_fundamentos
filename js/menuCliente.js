@@ -1,3 +1,13 @@
+const input = document.getElementById('barrabusqueda');
+
+input.addEventListener('keydown', function(event) {
+    if (event.key === "Enter" && input.value.trim() !== "") {
+        // Redireccionar a la nueva pantalla
+        window.location.href = "../html/Busqueda.html";
+    }
+});
+
+
 // Definición de funciones y variables
 var getElem = function(id) {
   return document.getElementById(id);
@@ -13,11 +23,47 @@ var hide = function(id) {
   document.body.classList.remove('overlayActive');
 }
 
+const cant=20;
 
-function generateProducts(numProducts, containerSelector, popupId) {
+async function getProductos(){
+  return await fetch('http://localhost:8080/productos', {
+
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          limit: 20
+      })
+  })
+}
+
+const promesaProductos = getProductos()
+
+promesaProductos
+  .then(res => {
+
+      res.json()
+  })
+  .then(data => {
+      console.log(data)
+      //ingresarlo al local storage la lista de ids de productos
+       //y hacer el proceso de ingresar las fotos
+       for (var i = 0; i < cant; i++) {
+      
+       }
+      generateProducts(".scrollBoxProducto", data.nombre, data.url);
+  })
+  .catch(() => {
+      console.log('error')
+  })
+  
+
+function generateProducts(containerSelector, popupId) {
   var container = $(containerSelector);
+  var linkImagen;
+  var nombre;
 
-  for (var i = 0; i < numProducts; i++) {
+  for (var i = 0; i < cant; i++) {
       var productBlock = `
           <div class="producto">
               <div class="circuloproducto">
@@ -38,19 +84,55 @@ function generateProducts(numProducts, containerSelector, popupId) {
   container.find(".productLink").on("click", function(event) {
       event.preventDefault();
       show(popupId);
+      $('#cantidadProducto').val(1);
   });
 }
 
-function generateTiendas(numTiendas, containerSelector) {
-  var container = $(containerSelector);
+async function getTiendas(){
+  return await fetch('http://localhost:3000/tiendas', {
 
-  for (var i = 0; i < numTiendas; i++) {
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          limit: 20
+      })
+  })
+}
+
+const promesaTiendas = getTiendas()
+
+promesaTiendas
+  .then(res => {
+      console.log(res.ok)
+      
+
+      res.json()
+  })
+  .then(data => {
+      console.log(data)
+      //ingresarlo al local storage la lista de ids de tiendas
+     //y hacer el proceso de ingresar las fotos
+     for (var i = 0; i < cant; i++) {
+
+     }
+     generateTiendas(".scrollBoxTienda", data.nombre, data.url);
+  })
+  .catch(() => {
+      console.log('error')
+  })
+  
+
+function generateTiendas(containerSelector) {
+  var container = $(containerSelector);
+  var linkImagen;
+  var nombre;
+
+  for (var i = 0; i < cant; i++) {
       var tiendaBlock = `
       <div class="minitienda">
           <div class="circuloTIENDA">
-            <a  href="#" onclick="show('')">
               <img class="fotominiTIENDA" src="../imagenes/LaCentral.png" alt="foto Tienda">
-            </a>
           </div>
           
           <p class="nombreminiTIENDA">
@@ -61,15 +143,101 @@ function generateTiendas(numTiendas, containerSelector) {
 
       container.append(tiendaBlock);
   }
-
-
 }
+
+async function getInfoProducto(idProducto){
+  return await fetch('http://localhost:3000/info-producto', {
+
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          ID: idproducto
+      })
+  })
+}
+
+const promesaInformacionProducto = getProductos()
+
+promesaInformacionProducto
+  .then(res => {
+      console.log(res.ok)
+
+      res.json()
+  })
+  .then(data => {
+      console.log(data)
+
+      //VER EL ARRAY PORF
+      generateInfoProducto(data.nombre, data.precio, data.descuento, data.disponible, data.descripcion, data.ingredientes, data.tiendasList, data.imagen);
+  })
+  .catch(() => {
+      console.log('error')
+  })
+  
+  function generateInfoProducto(nombre, precio, descuento, disponible, descripcion, ingredientes, tiendasList, linkImagen) {
+   
+    var container = $(containerSelector);
+    
+    $('#tituloProducto').text(nombre);
+    $("#fotopRODUCTO").attr("src", imagen);
+    $('#precioText').text(precio-precio*descuento);
+
+    if(descuento==0)
+    {
+      $('#DescText').hide();
+      $('#porcentajePopUp').hide();
+      $('#DescText2').hide();
+    }
+    else
+    {
+      $('#DescText2').text(descuento * 100 + '%');
+      $('#DescText').text(precio);
+      $('#DescText').css('text-decoration', 'line-through');
+
+    }
+
+    if(!disponible)
+    {
+      $('disponible').text('agotado');
+      $('#disponible').css('color', '#f17e7e');  // Cambia el color a rojo
+    }
+
+    $('#textoDescrip').text(descripcion);
+
+    $('#textoIngred').text(ingredientes);
+
+    for (var i = 0; i < tiendasList.size; i++) {
+      var nombreTienda;
+
+      var tiendaBlock = `
+      <div id="RadioOptions1">
+            <input type="radio" id="tienda" name="TiendaSeleccion" value="Tienda1">
+      </div>
+      `;
+      
+      //REVISAR
+      container.append('scrollBoxinner');
+    }
+
+  }
+
 
 $(document).ready(function() {
   // Para el primer bloque
-  generateProducts(10, ".scrollBoxProducto", 'popup');
+  generateProducts(".scrollBoxProducto", 'popup');
 
-  generateTiendas(10, ".scrollBoxTienda");
+  generateTiendas(".scrollBoxTienda");
+
+  asignarFoto();
+
+  function asignarFoto()
+  {
+    if (sessionStorage.getItem('fotoPerfil')) 
+    {
+      document.getElementById('userimg').src = sessionStorage.getItem('fotoPerfil');
+    }
+  }
 
   $('#basura').on('click', function() {
     $('#cantidadProducto').val('1');
@@ -88,8 +256,7 @@ $(document).ready(function() {
         return false; // Evita que se ejecute cualquier otro comportamiento del botón.
     }
     
-    // Aquí puedes continuar con cualquier otra lógica que necesites.
+
 });
 
-  
 });

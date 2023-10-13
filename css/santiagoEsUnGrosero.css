@@ -67,6 +67,7 @@ header
     border: none;
     font-size: larger;
 }
+
 .reg
 {
     border-radius: 30px;
@@ -78,6 +79,7 @@ header
     border: none;
 
 }
+
 .botonesMenu
 {
     position: absolute;

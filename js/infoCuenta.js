@@ -1,7 +1,69 @@
-$(document).ready(function() {
+ async function getInfoUsuario(){
+    let idUsuario = localStorage.getItem('idUsuario');
+    
+    return await fetch('http://localhost:8080/info-usuario', {
   
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            ID: idUsuario //ESTO ES DE LA MEMORIA
+        })
+    })
+  }
+  
+  const promesaInformacionUsuario = getInfoUsuario()
+  
+  promesaInformacionUsuario
+    .then(res => {
+        console.log(res.ok)
+        res.json()
+    })
+    .then(data => {
+        console.log(data)
+        generateInfoUsuario(data.usuario,data.nombre, data.apellido, data.telefono);
+    })
+    .catch(() => {
+        console.log('error de inicio')
+    })
+
+    async function postInfoUsuario(inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono){
+        let idUsuario = localStorage.getItem('idUsuario');
+        
+        return await fetch('http://localhost:8080/crear-usuario', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                ID: idUsuario,
+                NUsario: inputNombreusuario,
+                nombre: inputnombre,
+                apellido: inputapellido,
+                telefeono: inputtelefono
+            })
+        })
+    }
+
+    async function EliminarUsuario(){
+        let idUsuario = localStorage.getItem('idUsuario');
+
+        return await fetch('http://localhost:8080/crear-usuario', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                ID: idUsuario
+            })
+        })
+    }
+
+
+$(document).ready(function() {
+    
     function initializeSessionStorage() {
-        var campos = ['Nombreusuario', 'contrasena', 'nombre', 'apellido', 'telefono', 'correo'];
+        var campos = ['Nombreusuario', 'nombre', 'apellido', 'telefono', 'correo'];
         campos.forEach(function(campo) {
             var inputElement = $('#' + campo);
             if (!sessionStorage.getItem(campo)) {
@@ -14,6 +76,16 @@ $(document).ready(function() {
                 });
             }
         });
+
+        if (sessionStorage.getItem('fotoPerfil')) 
+        {
+            document.getElementById('foto').src = sessionStorage.getItem('fotoPerfil');
+        }
+        else
+        {
+            sessionStorage.setItem('foto', document.getElementById('foto').src);
+        }
+    
     }
 
     initializeSessionStorage();
@@ -24,6 +96,8 @@ $(document).ready(function() {
         campos.forEach(function(campo) {
             $('#' + campo).val(sessionStorage.getItem(campo));
         });
+
+        document.getElementById('foto').src = sessionStorage.getItem('fotoPerfil');
     });
 
 
@@ -48,7 +122,7 @@ $(document).ready(function() {
         $('.alert2').removeClass("show");
         $('.alert2').addClass("hide");
     },10000);
-};
+  };
 
     $('.close-btn2').click(function(){
         $('.alert2').removeClass("show");
@@ -84,7 +158,19 @@ $(document).ready(function() {
   // Añade eventos a los botones Sí y No de la alerta
   $('.yes-btn, .no-btn').on('click', function() {
       hideAlert();
+      const promesaEliminar = EliminarUsuario();
+      promesaEliminar 
+          .then(res => {
+              console.log(res.ok)
+          })
+          .catch(() => {
+              console.log('error')
+              $('.msg2').text('No se pudo borrar la cuenta, vuelva a tratar');
+              showAlert2();
+          })
   });
+
+  
 
   $('.camposCambiar').off('submit').on('submit', function(event) {
     event.preventDefault();  // Prevent form submission
@@ -110,22 +196,32 @@ $(document).ready(function() {
     }
 
     if(isValid) {
-
-        saveToSessionStorage();
-        $('.msg2').text('Cambios guardados satisfactoriamente');
-        showAlert2();
-        this.submit();  // Submit the form
-
+        const promesaUpdateInformacionUsuario = postInfoUsuario(inputNombreusuario, inputcontrasena, $('#nombre').val().trim(), $('#apellido').val().trim(), inputtelefono);
+        saveToSessionStorage(); //ESTO SE QUITA
+        promesaUpdateInformacionUsuario
+        .then(res => {
+            saveToSessionStorage();
+            $('.msg2').text('Cambios guardados satisfactoriamente');
+            showAlert2();
+            console.log(res.ok)
+        })
+        .catch(() => {
+            console.log('error')
+            $('.msg2').text('Cambios no guardados, vuelva a tratar');
+            showAlert2();
+        })
+        
     }
-});
+   });
 
-function saveToSessionStorage() {
-    var campos = ['Nombreusuario', 'contrasena', 'nombre', 'apellido', 'telefono', 'correo'];
-    campos.forEach(function(campo) {
-        var inputElement = $('#' + campo);
-        sessionStorage.setItem(campo, inputElement.val());
-    });
-}
+    function saveToSessionStorage() {
+        var campos = ['Nombreusuario', 'contrasena', 'nombre', 'apellido', 'telefono', 'correo'];
+        campos.forEach(function(campo) {
+            var inputElement = $('#' + campo);
+            sessionStorage.setItem(campo, inputElement.val());
+        });
+        sessionStorage.setItem('fotoPerfil', document.getElementById('foto').src);
+    }
 
 });
 
@@ -135,7 +231,26 @@ function show(id) {
   }
   
   function hide(id) {
-    document.getElementById(id).style.display = 'none';
-    document.body.classList.remove('overlayActive');
-  }
-  
+    console.log("Intentando ocultar el elemento con ID:", id);
+    var element = document.getElementById(id);
+    if(element) {
+        element.style.display = 'none';
+        document.body.classList.remove('overlayActive');
+    } else {
+        console.error("Elemento con ID:", id, "no encontrado");
+    }
+}
+
+    
+function changeProfileImage(imgSrc, id) {
+    document.getElementById('foto').src = imgSrc;
+
+    var element = document.getElementById(id);
+    if(element) {
+        element.style.display = 'none';
+        document.body.classList.remove('overlayActive');
+    } else {
+        console.error("Elemento con ID:", id, "no encontrado");
+    }
+
+}
