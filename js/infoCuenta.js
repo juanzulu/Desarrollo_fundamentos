@@ -1,4 +1,5 @@
- async function getInfoUsuario(){
+ async function getInfoUsuario()
+ {
     let idUsuario = localStorage.getItem('idUsuario');
     
     return await fetch('http://localhost:8080/info-usuario', {
@@ -155,8 +156,12 @@ $(document).ready(function() {
       hideAlert();
   });
 
+  $('.no-btn').on('click', function() {
+    hideAlert();
+});
+
   // Añade eventos a los botones Sí y No de la alerta
-  $('.yes-btn, .no-btn').on('click', function() {
+  $('.yes-btn').on('click', function() {
       hideAlert();
       const promesaEliminar = EliminarUsuario();
       promesaEliminar 
