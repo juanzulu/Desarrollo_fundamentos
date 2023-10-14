@@ -5,17 +5,19 @@ async function post(inputID, inputNombreusuario, inputcontrasena, inputnombre, i
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            ID: inputID,
-            tipo: inputTipo,
-            NUsario: inputNombreusuario,
-            contrasena: inputcontrasena,
-            nombre: inputnombre,
-            apellido: inputapellido,
-            telefeono: inputtelefono,
-            correo: inputcorreo,
-            fecha: inputfecha
-        })
+        body: JSON.stringify(
+            {
+                ID: usuarioId,
+                tipo: tipousuario,
+                NUsario: nombreUsuario,
+                contrasena: inputcontrasena,
+                nombre: inputnombre,
+                apellido: inputapellido,
+                telefono: inputtelefono,
+                correo: inputcorreo,
+                fecha: inputfecha
+            }
+        )
     })
 }
 

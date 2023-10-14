@@ -1,14 +1,14 @@
 
-async function post(inputNombreusuario, inputcontrasena, inputTipo){
+async function get(inputNombreusuario, inputcontrasena, inputTipo){
     return await fetch('http://localhost:8080/ingreso', {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             tipo: inputTipo,
-            NUsario: inputNombreusuario,
-            contrasena: inputcontrasena
+            NUsario: tipousuario,
+            contrasena: nombreUsuario
         })
     })
 }
@@ -50,14 +50,13 @@ $(document).ready(function() {
         
         if(isValid) 
         {
-            $(this).unbind('submit').submit(); /*ESTO SE QUITA*/
-            const promesa=post(inputNombreusuario, inputcontrasena, inputTipo);
+            const promesa=get(inputNombreusuario, inputcontrasena, inputTipo);
 
             promesa
                 .then(res => {
                     console.log(res.ok)
                     res.json().then(data => {
-                        sessionStorage.setItem('idUsuario', data.id); //GUARDAR EL ID DEL USUARIO EN EL LOCAL STORAGE
+                        sessionStorage.setItem('idUsuario', data.ID); //GUARDAR EL ID DEL USUARIO EN EL LOCAL STORAGE
                         sessionStorage.setItem('fotoPerfil', data.avatar);    //PEDIR EL AVATAR Y GUARDARLO EN EL LOCAL STORAGE
                     })
                 

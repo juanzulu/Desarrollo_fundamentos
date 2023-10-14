@@ -28,11 +28,11 @@
         console.log('error de inicio')
     })
 
-    async function postInfoUsuario(inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono){
+    async function postInfoUsuario(inputNombreusuario, inputfoto, inputnombre, inputapellido, inputtelefono){
         let idUsuario = localStorage.getItem('idUsuario');
         
-        return await fetch('http://localhost:8080/crear-usuario', {
-            method: 'POST',
+        return await fetch('http://localhost:8080/actualizar-usuario', {
+            method: 'UPDATE',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -41,7 +41,8 @@
                 NUsario: inputNombreusuario,
                 nombre: inputnombre,
                 apellido: inputapellido,
-                telefeono: inputtelefono
+                telefeono: inputtelefono,
+                foto: inputfoto
             })
         })
     }
@@ -49,7 +50,7 @@
     async function EliminarUsuario(){
         let idUsuario = localStorage.getItem('idUsuario');
 
-        return await fetch('http://localhost:8080/crear-usuario', {
+        return await fetch('http://localhost:8080/eliminar-usuario', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
