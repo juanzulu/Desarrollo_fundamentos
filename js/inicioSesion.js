@@ -1,14 +1,14 @@
 
-async function get(inputNombreusuario, inputcontrasena, inputTipo){
+async function get(nombreUsuario, contrasena, tipousuario){
     return await fetch('http://localhost:8080/ingreso', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            tipo: inputTipo,
-            NUsario: tipousuario,
-            contrasena: nombreUsuario
+            tipo: tipousuario,
+            NUsario: nombreUsuario,
+            contrasena: contrasena
         })
     })
 }
@@ -61,8 +61,7 @@ $(document).ready(function() {
                     })
                 
                     $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
-                    
-                    
+                     
                 })
                 .catch(() => {
                     $('.msg').text('Existe un error en la información');

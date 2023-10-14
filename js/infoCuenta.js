@@ -1,21 +1,21 @@
+//ESTE ES PARA PEDIR LA INFORMACION DEL USUARIO
  async function getInfoUsuario()
  {
     let idUsuario = localStorage.getItem('idUsuario');
     
-    return await fetch('http://localhost:8080/info-usuario', {
-  
+    return await fetch('http://localhost:8080/usuario/'+idUsuario, {
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            ID: idUsuario //ESTO ES DE LA MEMORIA
+            ID: idUsuario
         })
     })
   }
   
   const promesaInformacionUsuario = getInfoUsuario()
   
-  promesaInformacionUsuario
+    promesaInformacionUsuario
     .then(res => {
         console.log(res.ok)
         res.json()
@@ -28,11 +28,14 @@
         console.log('error de inicio')
     })
 
+
+    //
     async function postInfoUsuario(inputNombreusuario, inputfoto, inputnombre, inputapellido, inputtelefono){
+        
         let idUsuario = localStorage.getItem('idUsuario');
         
-        return await fetch('http://localhost:8080/actualizar-usuario', {
-            method: 'UPDATE',
+        return await fetch('http://localhost:8080/usuario/actualizacion/'+idUsuario, {
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -48,9 +51,10 @@
     }
 
     async function EliminarUsuario(){
+        
         let idUsuario = localStorage.getItem('idUsuario');
 
-        return await fetch('http://localhost:8080/eliminar-usuario', {
+        return await fetch('http://localhost:8080/usuario/eliminacion/'+idUsuario, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
