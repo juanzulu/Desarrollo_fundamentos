@@ -217,7 +217,7 @@ header
 
 .textoBotoni
 {
-    margin-right: 20px;
+    margin-right: 16px;
 }
 
 .textoBotonb
@@ -228,7 +228,7 @@ header
 /*si*/
 #hr1menu
 {
-  margin-top: 16%;
+  margin-top: 22%;
 }
 
 #hr2menu
@@ -239,37 +239,45 @@ header
 #restaurant
 {
   margin-top: 0%;
+  caret-color: transparent;
 }
 
 #kioskos
 {
   margin-top: 4%;
+  caret-color: transparent;
 }
 
 #Opsalud
 {
   margin-top: 4%;
+  caret-color: transparent;
 }
 
 #Cafeterias
 {
   margin-top: 4%;
+  caret-color: transparent;
 }
 
 #Especialidad
 {
   margin-top: 4%;
+  caret-color: transparent;
+
 }
 
 #Ubica
 {
   margin-top: 4%;
+  caret-color: transparent;
 }
 
 #mapa
 {
   margin-top: 4%;
   background: linear-gradient(90deg, #ffce56, #fa9399);
+  caret-color: transparent;
 }
 
 #volver_menu
@@ -278,12 +286,13 @@ header
     margin-top: 0%;
     text-decoration: none;
     font-size: 0.8rem;
-
+    caret-color: transparent;
 }
 
 #cerrar_sesion
 {
   margin-top: 4%;
+  caret-color: transparent;
 }
 
 
@@ -309,14 +318,186 @@ header
 .btnMidlle {
     position: absolute;
     cursor: default;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ff00ff;  /* inicialmente será de otro color para ver que si sea del mismo tamaño el boton al que debería */
     border: none; /* Elimina el borde del botón si no lo necesitas */
-    z-index: 2; /* Asegúrate de que el botón esté por encima del mapa, ajusta según sea necesario */
+    z-index: 3; /* Asegúrate de que el botón esté por encima del mapa, ajusta según sea necesario */
 }
 
 
+#boton1.btnMidlle {
+    top: 413px;
+    left: 450px;
+}
+
+#boton2.btnMidlle {
+    top: 386px;
+    left: 485px;
+}
+
+#boton3.btnMidlle {
+    top: 300px;
+    left: 228px;
+}
+
+#boton4.btnMidlle {
+    top: 474px;
+    left: 695px;
+}
+
+#boton5.btnMidlle {
+    top: 315px;
+    left: 409px;
+}
+
+#boton6.btnMidlle {
+    top: 395px;
+    left: 404px;
+}
+
+#boton7.btnMidlle {
+    top: 405px;
+    left: 514px;
+}
+
+#boton8.btnMidlle {
+    top: 358px;
+    left: 445px;
+}
+
+#boton9.btnMidlle {
+    top: 270px;
+    left: 480px;
+}
+
+#boton10.btnMidlle {
+    top: 321px;
+    left: 606px;
+}
+
+#boton11.btnMidlle {
+    top: 432px;
+    left: 730px;
+}
+
+#boton12.btnMidlle {
+    top: 428px;
+    left: 680px;
+}
+
+#boton13.btnMidlle {
+    top: 528px;
+    left: 622px;
+}
+
+#boton14.btnMidlle {
+    top: 312px;
+    left: 313px;
+}
+
+#boton15.btnMidlle {
+ 
+}
+
+#boton16.btnMidlle {
+    top: 10;
+    left: 9;
+}
+
+#boton17.btnMidlle {
+
+}
+
+#boton18.btnMidlle {
+
+}
+
+#boton19.btnMidlle {
+
+}
+
+#boton20.btnMidlle {
+
+}
+
+#boton21.btnMidlle {
+
+}
+
+#boton22.btnMidlle {
+
+}
+
+#boton23.btnMidlle {
+
+}
+
+#boton24.btnMidlle {
+
+}
+
+#boton25.btnMidlle {
+
+}
+
+#boton26.btnMidlle {
+    top: 10;
+    left: 9;
+
+}
+
+#boton27.btnMidlle {
+
+}
+
+#boton28.btnMidlle {
+
+}
+
+#boton29.btnMidlle {
+
+}
+
+#boton30.btnMidlle {
+
+}
+
+#boton31.btnMidlle {
+    top: 10;
+    left: 39;
+
+}
+
+#boton32.btnMidlle {
+
+}
+
+#boton33.btnMidlle {
+
+}
+
+#boton34.btnMidlle {
+
+}
+
+#boton35.btnMidlle {
+    
+}
+
+
+
+
+
+
+
+
+/* se comenta lo de las coordenadas */
+/*
+map[name="nombre-del-mapa"] area {
+    cursor: pointer; /* Puedes cambiar "pointer" por cualquier valor de cursor válido según tus necesidades */
+    /*
+}
 
