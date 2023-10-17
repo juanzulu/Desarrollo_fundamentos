@@ -118,20 +118,19 @@ $(document).ready(function() {
         }
 
         if(isValid) {
+            
             const promesa =  post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, tipo);
 
             promesa
                 .then(res => {
                     console.log(res.ok)
             
-                    $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
-                
+                    //$(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
                     $('.msg').text('Cuenta creada satisfactoriamente');
                     showAlert();
                 })
                 .then(data => {
                     console.log(data)
-                    variable = data
                 })
                 .catch(() => {
                     $('.msg').text('El nombre de usuario ya existe o usted ya existe en el sistema');
