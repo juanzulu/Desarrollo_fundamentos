@@ -84,95 +84,143 @@ input:checked + .slider:before {
 #LineaH
 {
 height: 3px;
-width: 12%;
+width: 140px;
 border-width:0;
 background-color:#f19ba6;
-right: 590px;
 position: absolute;
-top: 10%;
+  top: 85px;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
 
 #IngresarTitle
 {
-position: absolute;
-right: 595px;
-top: 3.7%;
+  position: absolute;
+  top: 40px;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
 
 #B1
 {
-position: absolute;
-right: 455px;
-top: 15%;
-color: #919596;
+  position: absolute;
+  top: 110px; 
+  color: #919596;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
+}
+@media screen and (max-width: 647px) 
+{
+    #B1{
+        font-size: 12px;
+        text-align: center;
+    }
+    #B2{
+      text-align: center;
+    }
+}
+
+@media screen and (max-width: 1047px) 
+{
+    #B1{
+      font-size: 14px;
+        text-align: center;
+    }
 }
 
 #B2
 {
-position: absolute;
-right: 574px;
-top: 20%;
-color: #919596;
-font-size: x-small;
+  position: absolute;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-50%);
+  color: #919596;
+  font-size: x-small;
+  top: 146px;
 }
 
 #B3
 {
-position: absolute;
-right: 655px;
-top: 22%;
-color: #919596;
-font-size: x-small;
+  position: absolute;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-50%);
+  top: 173px;
+  color: #919596;
+  font-size: x-small;
 }
 
 #ID
 {
-right: 720px;
-top: 32%;
+  position: absolute;
+  top: 270px;
+  width: 210px;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-155%);
 }
 
 #Nombreusuario
 {
-right: 720px;
-top: 42%;
+  position: absolute;
+  top: 270px;
+  width: 210px;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(30%);
+  background-color: transparent;
 }
 
 #contrasena
 {
-right: 720px;
-top: 52%;
+  position: absolute;
+  top: 330px;
+  width: 210px;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-155%);
 }
 
 #correo
 {
-right: 720px;
-top: 62%;
+  position: absolute;
+  top: 330px;
+  width: 210px;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(30%);
+  background-color: transparent;
 }
 
 #nombre
 {
-right: 400px;
-top: 32%;
+  position: absolute;
+  top: 390px;
+  width: 210px;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-155%);
 }
 
 #apellido
 {
-right: 400px;
-top: 42%;
+  position: absolute;
+  top: 390px;
+  width: 210px;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(30%);
 }
 
 #telefono
 {
-right: 400px;
-top: 52%;
+  position: absolute;
+  top: 450px;
+  width: 210px;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-155%);
 }
 
 #fecha
 {
-right: 400px;
-top: 62%;
-position: absolute;
-width: 18%;
+  position: absolute;
+  top: 450px;
+  width: 18%;
+  width: 210px;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(30%);
 }
 
 .texto
@@ -190,10 +238,12 @@ color: #a99f9f;
 
 #soy
 {
-position: absolute;
-right: 775px;
-top: 67%;
-font-weight: bold;
+
+  font-weight: bold;
+  top: 490px;
+  position: absolute;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-500%);
 }
 
 #tipoUsuario
@@ -201,9 +251,10 @@ font-weight: bold;
 display: flex;          /* Convierte el contenedor en un contenedor flex */
 align-items: center;
 gap: 20px;
-top: 74%;
+top: 530px;
 position: absolute;
-right: 37.7%;
+left: 50%; /* Mover el elemento a la mitad de su contenedor */
+transform: translateX(-50%);
 }
 
 #Registrarme
@@ -211,15 +262,16 @@ right: 37.7%;
 border: none;
 border-radius: 34px;
 background-color: #6ba1ed;
-width: 15%;
+width: 200px;
 padding: 10px 25px;    
 font-size: larger; 
 display: flex;
 align-items: center;   /* Centra los ítems verticalmente */
 justify-content: center; /* Centra los ítems horizontalmente */  
 position: absolute;
-top: 90%;
-right: 43.7%;
+top: 610px;
+left: 50%; /* Mover el elemento a la mitad de su contenedor */
+transform: translateX(-58%);
 
 }
 #flecha
@@ -233,7 +285,7 @@ width: 1.6px;
 height: 20px;
 background-color: rgb(48, 45, 45);
 display: inline-block;
-position: absolute;
+position: relative;
 top: 100%;
 right: 50%;
 bottom: 50px; 
@@ -241,31 +293,10 @@ bottom: 50px;
 
 #final
 {
-position: absolute;
+position: relative;
 top: 105%;
 }
 
-#i 
-{
-color: aliceblue;
-background-color: rgb(32, 95, 141);
-border-radius:80%;
-border: none;
-position: absolute;
-top: 40%;
-right: 75%;
-font-size: x-small;
-}
-
-#i:hover + .display-on-hover 
-{
-  display: block;
-}
-
-.display-on-hover 
-{
-  display: none;
-}
 
 .alert
 {
@@ -358,3 +389,29 @@ font-size: x-small;
   line-height: 40px;
 }
 
+
+.contenedor {
+  width: 100%; /* O el ancho que prefieras */
+  height: 100%;
+  margin: 0 auto; /* Esto centra el contenedor */
+  display: flex; /* Esto es necesario */
+  justify-content: center; /* Centrar horizontalmente */
+  position: relative;
+}
+
+@media screen and (min-width: 1643px) 
+{
+  body, h1, h2, h3, h4, h5, h6, p, li, a, input, button
+  {
+    font-size: calc(1em + 6px);
+  } 
+  input,#B2,#B3
+  {
+    font-size: calc(1em + 2px);
+  } 
+  #B2,#B3
+  {
+    font-size: calc(1em + 1px);
+  }
+
+}

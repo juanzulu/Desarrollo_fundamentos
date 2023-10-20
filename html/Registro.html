@@ -13,76 +13,76 @@
 
     <section>
 
-        <div class="alert">
-            <span class="fas fa-exclamation-circle"></span>
-            <span class="msg">ATENCION!!</span>
-            <div class="close-btn">
-               <span class="fas fa-times"> X </span>
-            </div>
-         </div>
-
         <img id="logo" src="../imagenes/logo.png" alt="es el logo">
-        
-        <div>
-            <H2 id="IngresarTitle">
-                Registrarme
-            </H2>
-            <hr id="LineaH">
+        <div class="contenedor">
+            <!-- Aquí va todo tu contenido principal -->
+            <div class="alert">
+                <span class="fas fa-exclamation-circle"></span>
+                <span class="msg">ATENCION!!</span>
+                <div class="close-btn">
+                   <span class="fas fa-times"> X </span>
+                </div>
+             </div>
+
+            <div>
+                <H2 id="IngresarTitle">
+                    Registrarme
+                </H2>
+                <hr id="LineaH">
+            </div>
+            
+            <div>
+                <p id="B1">
+                    ¡Bienvenido! Ingresa los siguientes espacios para resgistrarte. 
+                </p>
+                <p id="B2">
+                    Si tienes una cuenta de cliente  y quieres una de domiciliario, el nombre 
+                </p>
+                <p id="B3">
+                    de usuario debe ser diferente al de tu anterior cuenta
+                </p>
+            </div>
+
+    
+            <p class="display-on-hover"></p>
+    
+    
+            <form action="../html/MenuUsuario.html" class="camposLlenar">
+                <input type="text" id="ID" class="texto" placeholder="ID estudiante/profesor" required>
+                <input type="text" id="Nombreusuario" class="texto" placeholder="Nombre de usuario" required>
+                <input type="password" id="contrasena" class="texto"placeholder="Contraseña" required>
+               
+                <input type="text" id="nombre" class="texto"placeholder="Nombre" required>
+                <input type="text" id="apellido" class="texto" placeholder="Apellido" required>
+                <input type="text" id="telefono" class="texto" placeholder="Telefono" required>
+                <input type="text" id="correo" class="texto" placeholder="Correo Institucional" required>
+                <input type="date" id="fecha" required>
+    
+                <button id="Registrarme" type="submit">
+                    <img id="flecha" src="../imagenes/FlechaContinuarInicioDeSesion.png" alt="">
+                   Registrarme
+                </button>
+            </form>
+    
+            <p id="soy">
+                seré
+            </p>
+    
+            <div id="tipoUsuario">
+                <p >
+                   Cliente
+                </p>
+                <label class="switch">
+                    <input id="Tipo" type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <p>
+                    Domiciliario
+                </p> 
+            </div>
+            <hr id="final">
         </div>
-        
-        <div>
-            <p id="B1">
-                ¡Bienvenido! Ingresa los siguientes espacios para resgistrarte. 
-            </p>
-            <p id="B2">
-                Si tienes una cuenta de cliente  y quieres una de domiciliario, el nombre 
-            </p>
-            <p id="B3">
-                de usuario debe ser diferente al de tu anterior cuenta
-            </p>
-        </div>
 
-        <button id="i">
-            i
-        </button>
-
-        <p class="display-on-hover"></p>
-
-
-        <form action="../html/MenuUsuario.html" class="camposLlenar">
-            <input type="text" id="ID" class="texto" placeholder="ID estudiante/profesor" required>
-            <input type="text" id="Nombreusuario" class="texto" placeholder="Nombre de usuario" required>
-            <input type="password" id="contrasena" class="texto"placeholder="Contraseña" required>
-           
-            <input type="text" id="nombre" class="texto"placeholder="Nombre" required>
-            <input type="text" id="apellido" class="texto" placeholder="Apellido" required>
-            <input type="text" id="telefono" class="texto" placeholder="Telefono" required>
-            <input type="text" id="correo" class="texto" placeholder="Correo Institucional" required>
-            <input type="date" id="fecha" required>
-
-            <button id="Registrarme" type="submit">
-                <img id="flecha" src="../imagenes/FlechaContinuarInicioDeSesion.png" alt="">
-                continuar
-            </button>
-        </form>
-
-        <p id="soy">
-            seré
-        </p>
-
-        <div id="tipoUsuario">
-            <p >
-               Cliente
-            </p>
-            <label class="switch">
-                <input id="Tipo" type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <p>
-                Domiciliario
-            </p> 
-        </div>
-        <hr id="final">
 
     </section>
 

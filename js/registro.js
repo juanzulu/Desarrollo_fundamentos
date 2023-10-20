@@ -1,5 +1,5 @@
 
-async function post(usuarioId, nombreUsuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, tipousuario){
+async function post(usuarioId, nombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, tipo){
     return await fetch('http://localhost:8080/usuario/crear', {
         method: 'POST',
         headers: {
@@ -8,9 +8,9 @@ async function post(usuarioId, nombreUsuario, inputcontrasena, inputnombre, inpu
         body: JSON.stringify
         (
             {
-                ID: usuarioId,
-                tipo: tipousuario,
-                NUsario: nombreUsuario,
+                javerianaid: usuarioId,
+                tipoUsuario: tipo,
+                nombreUsuario: nombreusuario,
                 contrasena: inputcontrasena,
                 nombre: inputnombre,
                 apellido: inputapellido,
@@ -125,12 +125,12 @@ $(document).ready(function() {
                 .then(res => {
                     console.log(res.ok)
             
-                    //$(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
                     $('.msg').text('Cuenta creada satisfactoriamente');
                     showAlert();
                 })
                 .then(data => {
                     console.log(data)
+                    //interpretar valores
                 })
                 .catch(() => {
                     $('.msg').text('El nombre de usuario ya existe o usted ya existe en el sistema');

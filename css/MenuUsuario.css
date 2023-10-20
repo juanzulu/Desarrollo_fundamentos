@@ -11,7 +11,7 @@ header
     position: fixed;
     top: 0;
     width: 100%;
-    height: 10%;
+    height: 73px;
     gap: 40px;
     z-index: 10;
 }
@@ -119,7 +119,7 @@ header
 {
     height: 40px;
     position: absolute;
-    top: 40%;
+    top: 285px;
     display: flex;
     gap: 10px;
     left: 180px;
@@ -149,18 +149,19 @@ header
 
 #filtro
 {
-    top: 38%;
+    top: 270px;
     left: 60px;
 }
-#tiendas
+
+#tiendas2
 {
-    top: 45%;
-    left: 60px;
+    top: 333px;
+    left: 35px;
 }
 
 #promociones
 {
-    top: 85%;
+    top: 600px;
     left: 40px;
 }
 
@@ -201,10 +202,10 @@ header
 }
 
 .scrollBoxProducto{
-    top: 11%;
+     top: 82px;
      max-width: 100%; 
      width:  100%;  /* o el valor que desees */
-     height: 202px;
+     height: 202px; 
      position: absolute;
      overflow-x: auto;   /* Habilita el desplazamiento horizontal */
      overflow-y: hidden; /* Desactiva el desplazamiento vertical */
@@ -297,7 +298,7 @@ body.overlayActive {
     max-height: 425px; /* Puedes ajustar este valor según tus necesidades */
     overflow-y: auto;
     position: relative;
-    max-width: 685px; 
+    max-width: 58%; 
 }
 
 .scrollBoxinner::-webkit-scrollbar
@@ -531,6 +532,7 @@ body.overlayActive {
 {
     text-align: center;
 }
+
 .pestanamenu
 {
     display: none;
@@ -554,7 +556,7 @@ body.overlayActive {
     bottom: 0;
     right: 0;
     display: flex;
-    max-height: 100%;
+
   }
 
 #arrow
@@ -575,7 +577,6 @@ body.overlayActive {
     position: absolute;
     width: 100%;
     text-align: left;
-    height: 8%;
 }
 .botonazul
 {
@@ -588,7 +589,6 @@ body.overlayActive {
     width: 120px;
     background-color: #68A8C1;
     position: absolute;
-    top: 16%;
     color: white;
     font-weight: bolder;
     display: flex; 
@@ -609,89 +609,87 @@ body.overlayActive {
 #cerrasesion
 {
     left: 20%;
-    top: 15.9%;
+    top: 117px;
     z-index: 2000;
 }
 #ayuda
 {
+    top: 117px;
     left: 54%;
 }
 
 #secciones
 {
    position: absolute;
-   top: 26%; 
+   top: 180px; 
 }
+
+/* Estilo para el contenedor de botones */
+.containerbotones {
+    display: flex;
+    flex-direction: column; /* Alinea los botones verticalmente */
+    align-items: center; /* Alinea los botones al centro horizontalmente */
+    width: 100%;
+}
+
+/* Estilo para cada botón */
+.botonmenu {
+    display: flex; /* Hace de cada botón un contenedor Flexbox */
+    justify-content: space-between; /* Distribuye el espacio entre el texto y la imagen */
+    align-items: center; /* Alinea el texto y la imagen verticalmente al centro */
+    width: 90%; /* Ocupa todo el ancho del contenedor */
+    padding: 10px; /* Ajusta el espaciado interno según lo necesites */
+    border: none; /* Elimina el borde, si es necesario */
+    background-color: transparent; /* O el color que prefieras */
+    cursor: pointer; /* Estilo de cursor al pasar el ratón por encima */
+}
+
+/* Estilo para la imagen de flecha de cada botón */
+.botonmenu #arrow {
+    margin-left: 10px; /* Espaciado entre el texto y la flecha */
+}
+
 #mapa
 {
-    top: 32%; 
-}
-.textoBotonm
-{
-    margin-right: 28px;
+    top: 230px; 
 }
 #Productos
 {
-    top: 40%; 
+    top:280px; 
 }
-.textoBotonp
-{
-    margin-right: 65px;
-}
+
 #tiendas
 {
-    top: 48%; 
-    left: 2.8%;
+    top:330px; 
 }
-.textoBotont
-{
-    margin-right: 76px;
-}
+
 #Historial
 {
-    top: 57%; 
+    top: 382px; 
 }
-.textoBotonh
-{
-    margin-right: 7px;
-}
+
 #estado
 {
-    top: 65%; 
+    top: 450px; 
 }
-.textoBotone
-{
-    margin-right: 16px;
-}
+
 #cuenta
 {
     position: absolute;
-    top: 73%;
+    top: 540px;
 }
 #infocuenta
 {
-    left: 1%;
-    top: 81%;
+    top: 600px;
     z-index: 2000;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
     color: black;
+}
 
-}
-.textoBotoni
-{
-    margin-right: -8px;
-}
 #conf
 { 
-    left: 4%;
-    top: 90%;
+    top: 650px;
 }
-.textoBotonb
-{
-    margin-right: 8px;
-}
+
 #hr1menu
 {
   margin-top: 25%;
@@ -740,7 +738,7 @@ a {
 
 .scrollBoxTienda {
    
-   top: 54.5%;
+   top: 400px;
    overflow-x: auto;   /* Habilita el desplazamiento horizontal */
    overflow-y: hidden; /* Desactiva el desplazamiento vertical */
     max-width: 100%; 
@@ -774,4 +772,66 @@ a {
     padding: 0px 20px; /* Esto añade un padding (relleno) superior e inferior de 10px a cada producto */
     display: inline-block;
     vertical-align: top;  /* Asegura que se alineen por la parte superior */
+}
+
+@media screen and (max-width: 653px) 
+{
+    .scrollBoxProducto, .scrollBoxTienda
+    {
+        width:  120%; 
+        max-width: 120%; 
+    }
+
+}
+
+@media screen and (max-width: 1099px) 
+{
+    .scrollBoxProducto, .scrollBoxTienda
+    {
+        width:  120%; 
+        max-width: 100%; 
+    }
+
+}
+
+@media screen and (max-width: 1120px) 
+{
+    #slogan1
+    {
+        display: none;
+    }
+
+    #barrabusqueda
+    {
+        right: 25%;
+    }
+}
+
+@media screen and (max-width: 1227px) 
+{
+    #BAgregarSeguirComprando
+    {
+         width: 190px;
+    }
+    #BAgregarEirPagar
+    {
+        background-color: rgb(153, 147, 147);
+        right: 3%;
+        width: 190px;
+    }
+ 
+    .sumatoriadiv
+    {
+        right: 47.2%;
+    }
+
+}
+
+@media screen and (max-width: 1145px) 
+{
+    #circuloPRODUCTO 
+    {   
+        height: 300px;
+    }
+
 }

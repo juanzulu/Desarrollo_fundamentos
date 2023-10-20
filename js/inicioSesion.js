@@ -1,13 +1,13 @@
 
 async function get(nombreUsuario, contrasena, tipousuario){
-    return await fetch('http://localhost:8080/ingreso', {
-        method: 'GET',
+    return await fetch('http://localhost:8080/usuario/ingreso', {
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            tipo: tipousuario,
-            NUsario: nombreUsuario,
+            tipoUsuario: tipousuario,
+            nombreUsuario: nombreUsuario,
             contrasena: contrasena
         })
     })
@@ -52,22 +52,24 @@ $(document).ready(function() {
         {
             const promesa=get(inputNombreusuario, inputcontrasena, inputTipo);
 
+
             promesa
                 .then(res => {
                     console.log(res.ok)
+                    
                     res.json().then(data => {
-                        sessionStorage.setItem('idUsuario', data.ID); //GUARDAR EL ID DEL USUARIO EN EL LOCAL STORAGE
-                        sessionStorage.setItem('fotoPerfil', data.avatar);    //PEDIR EL AVATAR Y GUARDARLO EN EL LOCAL STORAGE
+                        sessionStorage.setItem('idUsuario', data.usuarioId); //GUARDAR EL ID DEL USUARIO EN EL LOCAL STORAGE
+                        sessionStorage.setItem('fotoPerfil', data.foto.path);    //PEDIR EL AVATAR Y GUARDARLO EN EL LOCAL STORAGE
+                        $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
                     })
-                
-                    $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
                      
                 })
-                .catch(() => {
-                    $('.msg').text('Existe un error en la información');
+                .catch(error => {
+                    $('.msg').text(`Existe un error en la información: ${error.message}`);
                     showAlert();
-                    console.log('error')
+                    console.log('error:', error);
                 })
+                
         }
     });
 });

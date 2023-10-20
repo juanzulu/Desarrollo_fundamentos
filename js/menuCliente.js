@@ -1,17 +1,41 @@
+  class ProductosPedidos {
+    idProducto = null;
+    idTienda = null;
+    cantidad = 0;
+    precio = 0;
+  }
 
+  InicializarPedido();
+
+  function InicializarPedido()
+  {
+    const pedido = {
+      total: 0, 
+      productos: []
+    }
+    // Intenta obtener el pedido del localStorage
+    const pedidoGuardado = localStorage.getItem('pedido');
+
+    // Si no hay un pedido guardado...
+    if (!pedidoGuardado) {
+        // Convierte el objeto 'pedido' a una cadena JSON y almacénalo en el localStorage
+        localStorage.setItem('pedido', JSON.stringify(pedido));
+    }
+
+  }
 //asignar la foto del usuario
-asignarFoto();
-function asignarFoto()
-{
-  if (sessionStorage.getItem('fotoPerfil')) 
+  asignarFoto();
+  function asignarFoto()
   {
-    document.getElementById('userimg').src = sessionStorage.getItem('fotoPerfil');
+    if (sessionStorage.getItem('fotoPerfil')) 
+    {
+      document.getElementById('userimg').src = sessionStorage.getItem('fotoPerfil');
+    }
+    else
+    {
+      document.getElementById('userimg').src = 'https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posición-de-foto-gris-vectores-de.jpg';
+    }
   }
-  else
-  {
-    document.getElementById('userimg').src = 'https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posición-de-foto-gris-vectores-de.jpg';
-  }
-}
 
 //esto es para la barra de busqueda
 const input = document.getElementById('barrabusqueda');
@@ -65,6 +89,7 @@ promesaProductos
   .catch(() => {
       console.log('error')
   })
+
   function generateProductList(data) {
     
     var container = $(".scrollBoxProducto");
@@ -118,47 +143,47 @@ promesaProductos
     });
   }
 
-//ESTO SE QUITA
-function generateProducts(containerSelector) {
-  var container = $(containerSelector);
+                  //ESTO SE QUITA
+                  function generateProducts(containerSelector) {
+                    var container = $(containerSelector);
 
-  for (var i = 0; i < 8; i++) {
-      var productBlock = `
-          <div class="producto">
-              <div class="circuloproducto">
-                  <a href="#" class="productLink" id="${i}">
-                      <img class="fotominipRODUCTO" src="../imagenes/PRODUCTOIMG.png" alt="foto Producto">
-                  </a>
-              </div>
-              <p class="nombreminiProducto">
-                  torta de chocolate
-              </p>
-          </div>
-      `;
+                    for (var i = 0; i < 8; i++) {
+                        var productBlock = `
+                            <div class="producto">
+                                <div class="circuloproducto">
+                                    <a href="#" class="productLink" id="${i}">
+                                        <img class="fotominipRODUCTO" src="../imagenes/PRODUCTOIMG.png" alt="foto Producto">
+                                    </a>
+                                </div>
+                                <p class="nombreminiProducto">
+                                    torta de chocolate
+                                </p>
+                            </div>
+                        `;
 
-      container.append(productBlock);
+                        container.append(productBlock);
+                    }
+
+                    // Es importante hacer el evento click DESPUÉS de agregar los productos al contenedor
+                    container.find(".productLink").on("click", function(event) {
+                        event.preventDefault();
+                        show('popup');
+                        $('#cantidadProducto').val(1);
+                        console.log(event.currentTarget.id);
+                    });
+                  }
+
+  async function getInfoProducto(idproducto){
+    return await fetch('http://localhost:3000/info-producto', {
+
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            ID: idproducto
+        })
+    })
   }
-
-  // Es importante hacer el evento click DESPUÉS de agregar los productos al contenedor
-  container.find(".productLink").on("click", function(event) {
-      event.preventDefault();
-      show('popup');
-      $('#cantidadProducto').val(1);
-      console.log(event.currentTarget.id);
-  });
-}
-
-async function getInfoProducto(idproducto){
-  return await fetch('http://localhost:3000/info-producto', {
-
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-          ID: idproducto
-      })
-  })
-}
 
   function generateInfoProducto(data) {
    
@@ -166,7 +191,8 @@ async function getInfoProducto(idproducto){
     
     $('#tituloProducto').text(data.nombre);
     $("#fotopRODUCTO").attr("src", data.foto);
-    $('#precioText').text(data.precio-data.precio*data.promocion);
+    const precioTot=data.precio-data.precio*data.promocion;
+    $('#precioText').text(precioTot.toFixed(2));
 
     if(data.descuento==0)
     {
@@ -192,7 +218,7 @@ async function getInfoProducto(idproducto){
 
     const ingredientesList=data.ingredientes;
 
-    var ingredientesText
+    var ingredientesText = ingredientesList.join(', ');
 
     $('#textoIngred').text(ingredientesText);
 
@@ -200,6 +226,7 @@ async function getInfoProducto(idproducto){
 
     for (var i = 0; i < tiendasList.size; i++) {
 
+      //mirar como saber cual tienda es
       var tiendaBlock = `
       <div id="RadioOptions1">
             <input type="radio" id="tienda" name="TiendaSeleccion" value=${tiendasList[i].nombre}>
@@ -211,7 +238,53 @@ async function getInfoProducto(idproducto){
       container.append(tiendaBlock);
     }
 
+    const pedido = JSON.parse(localStorage.getItem('pedido'));
+    $('#BAgregarEirPagar').text('Agregar e ir a pagar ' +  pedido.total.toFixed(2)); // toFixed(2) asegura que se muestren solo dos decimales
+
   }
+
+  document.addEventListener('DOMContentLoaded', function() { // Asegurarte de que el DOM esté cargado
+    const boton1 = document.getElementById('BAgregarEirPagar'); // Selecciona el botón por su ID
+    const boton2 = document.getElementById('BAgregarSeguirComprando'); // Selecciona el botón por su ID
+    const cantidadInput = document.getElementById('cantidadProducto'); // Selecciona el input por su ID
+
+    boton1.addEventListener('click', function(event) {
+        var cantidad = cantidadInput.value;
+
+        if (isNaN(cantidad) || cantidad.trim() === "") { 
+            alert('Por favor, introduce un número válido en la cantidad.');
+            event.preventDefault(); // Evita que se ejecute cualquier otro comportamiento del botón.
+        }
+        else
+        {
+                    //se hace el proceso de guardar el info del pedido
+          //se anade el producto con su informacion de id cantidad y precio
+          //se suma guarda el valor total
+          hide('popup') 
+        }
+    });
+
+    boton2.addEventListener('click', function(event) {
+      var cantidad = cantidadInput.value;
+
+      if (isNaN(cantidad) || cantidad.trim() === "") { 
+
+          alert('Por favor, introduce un número válido en la cantidad.');
+          event.preventDefault(); // Evita que se ejecute cualquier otro comportamiento del botón.
+
+      }
+      else
+      {
+
+          //se hace el proceso de guardar el info del pedido
+          //se anade el producto con su informacion de id cantidad y precio
+          //se suma guarda el valor total
+
+          hide('popup')
+      }
+  });
+});
+
 
 
   //ESTO SE QUITA
@@ -225,12 +298,11 @@ async function getInfoProducto(idproducto){
 
       var tiendaBlock = `
       <div id="RadioOptions1">
-            <input type="radio" id="tienda" name="TiendaSeleccion" value="a">
-            <label id="labelt" for="a">Tienda ${i}</label>
+            <input type="radio" id="tienda" name="TiendaSeleccion" value="C">
+            <label id="labelt" for="B">Tienda ${i}</label>
       </div>
       `;
       
-      //REVISAR
       container.append(tiendaBlock);
     }
   }
@@ -325,9 +397,9 @@ function generateTiendas(containerSelector) {
 
 
 $(document).ready(function() {
-  // Para el primer bloque
+//ESTO SE QUITA
   generateProducts(".scrollBoxProducto", 'popup');
-
+//ESTO SE QUITA
   generateTiendas(".scrollBoxTienda");
 
   $('#basura').on('click', function() {
@@ -338,16 +410,5 @@ $(document).ready(function() {
     var currentValue = parseInt($('#cantidadProducto').val(), 10) || 0; // Convertir el valor a entero
     $('#cantidadProducto').val(currentValue + 1);
   });
-
-  $('.Bspagar').on('click', function() {
-    var cantidad = $('#cantidadProducto').val();
-    if (isNaN(cantidad) || cantidad.trim() === "") { 
-        // isNaN verifica si no es un número; la segunda condición verifica si está vacío o sólo contiene espacios.
-        alert('Por favor, introduce un número válido en la cantidad.');
-        return false; // Evita que se ejecute cualquier otro comportamiento del botón.
-    }
-    
-
-});
 
 });

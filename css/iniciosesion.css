@@ -87,41 +87,47 @@ a {
 
 #LineaH
 {
-height: 3px;
-width: 10%;
-border-width:0;
-background-color:#f19ba6;
-right: 580px;
-position: absolute;
-top: 15%;
+  height: 3px;
+  width: 130px;
+  border-width:0;
+  background-color:#f19ba6;
+  position: absolute;
+  top: 15%;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
 
 #IngresarTitle
 {
 position: absolute;
-right: 595px;
 top: 8.7%;
+left: 50%; /* Mover el elemento a la mitad de su contenedor */
+transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
 
 #B1
 {
 position: absolute;
-right: 567px;
 top: 20%;
 color: #919596;
+left: 50%; /* Mover el elemento a la mitad de su contenedor */
+transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
 
 #B2
 {
 position: absolute;
-right: 517px;
 top: 25%;
 color: #919596;
+left: 50%; /* Mover el elemento a la mitad de su contenedor */
+transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
 
 #Nombreusuario
 {
 top: 40%;
+left: 50%; /* Mover el elemento a la mitad de su contenedor */
+transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
 
 #Informacion
@@ -134,6 +140,8 @@ top: 40%;
 #contrasena
 {
 top: 50%;
+left: 50%; /* Mover el elemento a la mitad de su contenedor */
+transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
 
 .texto
@@ -153,9 +161,10 @@ color: #a99f9f;
 #soy
 {
 position: absolute;
-right: 775px;
 top: 57%;
 font-weight: bold;
+left: 41%; /* Mover el elemento a la mitad de su contenedor */
+transform: translateX(-190%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
 
 #tipoUsuario
@@ -165,7 +174,8 @@ font-weight: bold;
   gap: 20px;
   top: 67%;
   position: absolute;
-  right: 37.7%;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+transform: translateX(-43%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
 
 #continuar
@@ -173,7 +183,7 @@ font-weight: bold;
   border: none;
   border-radius: 34px;
   background-color: #6ba1ed;
-  width: 15%;
+  width: 210px;
   padding: 10px 25px;    
   font-size: larger; 
   display: flex;
@@ -181,7 +191,8 @@ font-weight: bold;
   justify-content: center; /* Centra los ítems horizontalmente */  
   position: absolute;
   top: 80%;
-  right: 43.7%;
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 
 }
 #flecha
@@ -197,20 +208,23 @@ div.vertical-line {
   display: inline-block;
   position: absolute;
   top: 100%;
-  right: 50%;
   bottom: 50px; 
-  }
+  left: 50%; /* Mover el elemento a la mitad de su contenedor */
+  transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
+
+}
   
   #olvideContrasena
   {
-  border: none;
-  background-color: transparent;
-  color: #f46f6f;
-  position: absolute;
-  top: 90%;
-  right: 51%;
-  margin-bottom: 30px;
-  bottom: 50px; 
+    border: none;
+    background-color: transparent;
+    color: #f46f6f;
+    position: absolute;
+    top: 90%;
+    margin-bottom: 30px;
+    bottom: 50px; 
+    left: 43%; /* Mover el elemento a la mitad de su contenedor */
+    transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
   }
 
   #olvideContrasena:active
@@ -225,9 +239,11 @@ div.vertical-line {
     color: #4ea4ef;
     position: absolute;
     top: 90%;
-    right: 43.2%;
     margin-bottom: 30px;
     bottom: 50px; 
+    left: 54%; /* Mover el elemento a la mitad de su contenedor */
+    transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
+
   }
 
   #Registrarme:active
@@ -245,6 +261,40 @@ div.vertical-line {
   top: 90%;
   right: 50%;
   bottom: 50px; 
+}
+
+@media screen and (max-width: 1043px) 
+{
+    #olvideContrasena
+    {
+      left: 50%; /* Mover el elemento a la mitad de su contenedor */
+      transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
+  
+    }
+    #Registrarme
+    {
+      top: 94%;
+      left: 50%; /* Mover el elemento a la mitad de su contenedor */
+      transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
+    }
+
+    div.vertical-line {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 1643px) 
+{
+  body, h1, h2, h3, h4, h5, h6, p, li, a, input, button
+  {
+    font-size: calc(1em + 6px);
+  } 
+  input
+  {
+    font-size: calc(1em + 2px);
+  } 
+
 }
 
 #final
@@ -342,4 +392,13 @@ div.vertical-line {
   color: #ce8500;
   font-size: 22px;
   line-height: 40px;
+}
+
+.contenedor {
+  width: 100%; /* O el ancho que prefieras */
+  height: 100%;
+  margin: 0 auto; /* Esto centra el contenedor */
+  display: flex; /* Esto es necesario */
+  justify-content: center; /* Centrar horizontalmente */
+  position: relative;
 }
