@@ -1,5 +1,5 @@
 
-async function post(usuarioId, nombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, tipo){
+async function post(usuarioId, nombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, edad, tipo){
     return await fetch('http://localhost:8080/usuario/crear', {
         method: 'POST',
         headers: {
@@ -8,15 +8,15 @@ async function post(usuarioId, nombreusuario, inputcontrasena, inputnombre, inpu
         body: JSON.stringify
         (
             {
-                javerianaid: usuarioId,
-                tipoUsuario: tipo,
-                nombreUsuario: nombreusuario,
+                idjaveriana: usuarioId,
+                tipousuario: tipo,
+                nombreusuario: nombreusuario,
                 contrasena: inputcontrasena,
                 nombre: inputnombre,
                 apellido: inputapellido,
                 telefono: inputtelefono,
-                correo: inputcorreo,
-                fecha: inputfecha
+                correoinstitucional: inputcorreo,
+                edad: edad
             }
         )
     })
@@ -44,7 +44,7 @@ $(document).ready(function() {
         event.preventDefault();  // This prevents the form from being submitted
 
         var isValid = true;  // Assume the form is valid to start\\
-        const yearMinimo =2005;
+        const edadMin =13;
 
         var inputID = $('#ID').val();
         var inputNombreusuario = $('#Nombreusuario').val();
@@ -55,7 +55,21 @@ $(document).ready(function() {
         var inputcorreo = $('#correo').val();
         var regex = /@javeriana\.edu\.co$/;
         var inputfecha= $('#fecha').val();
-        var year = parseInt(inputfecha.split('-')[0]);    // Split the date string at '-' and take the first part
+
+        // Convertir la fecha del input en un objeto Date
+        var fechaNacimiento = new Date(inputFecha);
+
+        // Obtener la fecha actual
+        var fechaActual = new Date();
+
+        // Restar los años
+        var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+        // Ajustar si el cumpleaños de este año todavía no ha ocurrido
+        if (fechaActual.getMonth() < fechaNacimiento.getMonth() ||
+        (fechaActual.getMonth() === fechaNacimiento.getMonth() && fechaActual.getDate() < fechaNacimiento.getDate())) {
+            edad--;
+        }
 
         var tipo;
 
@@ -109,9 +123,9 @@ $(document).ready(function() {
             $('.msg').text('Correo no pertenerce a la universidad Javeriana');
             showAlert();
         }
-        else if(year > yearMinimo) 
+        else if(edad < edadMin) 
         {
-            console.log("menor de 18");
+            console.log("menor de 13");
             isValid = false;
             $('.msg').text('Debe ser mayor de 18 años');
             showAlert();
@@ -119,7 +133,7 @@ $(document).ready(function() {
 
         if(isValid) {
             
-            const promesa =  post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, tipo);
+            const promesa =  post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, edad, tipo);
 
             promesa
                 .then(res => {

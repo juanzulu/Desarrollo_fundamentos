@@ -6,8 +6,8 @@ async function get(nombreUsuario, contrasena, tipousuario){
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            tipoUsuario: tipousuario,
-            nombreUsuario: nombreUsuario,
+            tipousuario: tipousuario,
+            nombreusuario: nombreUsuario,
             contrasena: contrasena
         })
     })
@@ -52,20 +52,27 @@ $(document).ready(function() {
         {
             const promesa=get(inputNombreusuario, inputcontrasena, inputTipo);
 
-
             promesa
                 .then(res => {
                     console.log(res.ok)
-                    
-                    res.json().then(data => {
-                        sessionStorage.setItem('idUsuario', data.usuarioId); //GUARDAR EL ID DEL USUARIO EN EL LOCAL STORAGE
-                        sessionStorage.setItem('fotoPerfil', data.foto.path);    //PEDIR EL AVATAR Y GUARDARLO EN EL LOCAL STORAGE
-                        $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
-                    })
+                    if (res.ok) 
+                    {
+                        res.json().then(data => {
+                            sessionStorage.setItem('idUsuario', data.id); //GUARDAR EL ID DEL USUARIO EN EL LOCAL STORAGE
+                            sessionStorage.setItem('fotoPerfil', data.Foto.foto);    //PEDIR EL AVATAR Y GUARDARLO EN EL LOCAL STORAGE
+                            // Desvincula el evento 'submit' y luego envía el formulario
+                            window.location.href = "../html/MenuUsuario.html";
+                        })
+                    }
+                    else
+                    {
+                        $('.msg').text(`Existe un error en la información`);
+                        showAlert();
+                    }
                      
                 })
                 .catch(error => {
-                    $('.msg').text(`Existe un error en la información: ${error.message}`);
+                    $('.msg').text(`Existe un error en la información`);
                     showAlert();
                     console.log('error:', error);
                 })

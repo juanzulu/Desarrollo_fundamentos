@@ -30,7 +30,7 @@
 
     <a href="../html/InfoCuenta.html">
       <div id="fotoPerfil">
-        <img id="userimg" src="../imagenes/usuario.webp" alt="usericon">
+        <img id="userimg" src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de.jpg" alt="usericon">
       </div>
     </a>
 
@@ -61,8 +61,7 @@
 
     </div>
 
-    
-    <div class="popUpProducto" id="popup">
+  <div class="popUpProducto" id="popup">
 
       <a id="equisButton" href="#" onclick="hide('popup')">
         <img id="equis" src="../imagenes/equis.png" alt="equis">
@@ -83,7 +82,7 @@
 
           <div id="encabezado">
             <h4  id="precioText">
-              $precio
+              10000
             </h4>
             <h4 id="DescText">
               descuento %
@@ -113,15 +112,10 @@
           <p id="textoIngred">
             texto Ingredientes
           </p>
-        
-          <div id="RadioOptions1">
-            <input type="radio" id="tienda" name="TiendaSeleccion" value="Tienda1">
-            <label id="labelt" for="tienda1">Tienda 1</label> <label id="labelDisp" for="tienda1">Disponible</label>
-          </div>
 
-          <div id="RadioOptions2">
-            <input type="radio" id="tienda" name="TiendaSeleccion" value="Tienda2">
-            <label id="labelt" for="tienda2">Tienda 2</label>  <label id="labelDisp" for="tienda2">Disponible</label>
+
+          <div id="RadioOptions">
+
           </div>
           
   
@@ -134,7 +128,7 @@
         </button>
 
         <button class="Bspagar" id="BAgregarEirPagar">
-          Agregar e ir a pagar $$$
+          Agregar e ir a pagar 0
         </button>
 
           <div class="sumatoriadiv" >
@@ -147,68 +141,79 @@
             </button>
 
           </div>
-        </div>
+  </div>
+    
 
-        <div id="pestanadelmenu" class="pestanamenu">
+  <div id="pestanadelmenu" class="pestanamenu">
 
-            <img id="logomenu" src="../imagenes/logo.png" alt="es el logo">
-  
-            <a id="equismenu" href="#" onclick="hide('pestanadelmenu')">
-              <img id="equis" src="../imagenes/equis.png" alt="equis">
-            </a>
-  
-            <a id="cerrasesion" class="botonazul" href="/Users/sophiaaristizabal/Documents/GitHub/Desarrollo_fundamentos/index.html">
-              cerrar sesion
-            </a>
-            <button id="ayuda" class="botonazul">
-              ayuda
-            </button>
-  
-            <hr id="hr1menu" >
-  
-            <div class="sec">
-                <h2 id="secciones">
-                secciones
-              </h2>
-              <button id="mapa" class="botonmenu">
-                <span class="textoBotonm">Mapa de tiendas</span>
-                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-              </button> 
-              <button id="Productos" class="botonmenu">
-                <span class="textoBotonp">Productos</span>
-                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-              </button> 
-              <button id="tiendas2" class="botonmenu">
-                <span class="textoBotont">Tiendas</span>
-                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-              </button> 
-              <button id="Historial" class="botonmenu">
-                <span class="textoBotonh">Historial de pedidos</span>
-                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-              </button> 
-              <button id="estado" class="botonmenu">
-                <span class="textoBotone">Estado del pedido</span>
-                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-              </button> 
-            </div>
-            
-            <hr id="hr2menu">
-            <div class="sec">
-                <h2 id="cuenta">
-                cuenta
-              </h2>
-              <a id="infocuenta" class="botonmenu" href="../html/InfoCuenta.html">
-                <span class="textoBotoni">Información de cuenta</span>
-                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-              </a>
-              <butto class="botonmenu" id="conf">
-                <span class="textoBotonb">Configuraciones</span>
-                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-              </button>
-            </div>
-            
-  
-          </div>
+    <img id="logomenu" src="../imagenes/logo.png" alt="es el logo">
+
+    <a id="equismenu" href="#" onclick="hide('pestanadelmenu')">
+      <img id="equis" src="../imagenes/equis.png" alt="equis">
+    </a>
+
+    <a id="cerrasesion" class="botonazul" href="/Users/sophiaaristizabal/Documents/GitHub/Desarrollo_fundamentos/index.html">
+      cerrar sesion
+    </a>
+    <button id="ayuda" class="botonazul">
+      ayuda
+    </button>
+
+    <hr id="hr1menu" >
+
+    <div class="sec">
+        <h2 id="secciones">
+        secciones
+      </h2>
+      
+      <div class="containerbotones">
+        <a id="mapa" class="botonmenu" href="../html/MapaUniversidadComida.html">
+          <span class="textoBotonm">Mapa de tiendas</span>
+          <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+        </a>
+        <a id="Productos" class="botonmenu">
+          <span class="textoBotonp">Productos</span>
+          <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+        </a> 
+        <a id="tiendasMenu" class="botonmenu">
+          <span class="textoBotont">Tiendas</span>
+          <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+        </a> 
+        <a id="historial" class="botonmenu">
+          <span class="textoBotonh">Historial de pedidos</span>
+          <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+        </a> 
+        <a id="estado0" class="botonmenu">
+          <span class="textoBotone">Estado del pedido</span>
+          <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+        </a> 
+      </div>
+      
+    </div>
+    
+    <hr id="hr2menu">
+    <div class="sec">
+        <h2 id="cuenta">
+        cuenta
+      </h2>
+      <div class="containerbotones">
+        <a id="infocuenta" class="botonmenu" href="../html/InfoCuenta.html">
+          <span class="textoBotoni">Información de cuenta</span>
+          <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+        </a>
+        <butto class="botonmenu" id="conf">
+          <span class="textoBotonb">Configuraciones</span>
+          <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+        </button>
+      </div>
+      
+    </div>
+    
+
+  </div>
+
+
+        
       
     
 

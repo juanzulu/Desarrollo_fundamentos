@@ -16,6 +16,12 @@ header
     z-index: 10;
 }
 
+a {
+    text-decoration: none; /* Quitar el subrayado */
+    font-family: 'Nunito', sans-serif;
+    color: black; /* Hacer que el color sea el mismo que el del texto circundante */
+}
+
 
 #logo
 {
@@ -104,6 +110,12 @@ header
 }
 
 #tienda
+{
+    height: 20px;
+    margin-right: 55px;
+}
+
+.tienda
 {
     height: 20px;
     margin-right: 55px;
@@ -642,6 +654,7 @@ body.overlayActive {
     border: none; /* Elimina el borde, si es necesario */
     background-color: transparent; /* O el color que prefieras */
     cursor: pointer; /* Estilo de cursor al pasar el ratón por encima */
+    z-index: 2000;
 }
 
 /* Estilo para la imagen de flecha de cada botón */
@@ -656,6 +669,7 @@ body.overlayActive {
 #Productos
 {
     top:280px; 
+
 }
 
 #tiendas
@@ -698,11 +712,6 @@ body.overlayActive {
 {
   margin-top: 88%;
 }
-a {
-    text-decoration: none; /* Quitar el subrayado */
-    font-family: 'Nunito', sans-serif;
-}
-
 
 .circuloTIENDA
 {   

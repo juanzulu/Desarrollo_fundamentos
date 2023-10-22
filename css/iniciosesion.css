@@ -92,7 +92,7 @@ a {
   border-width:0;
   background-color:#f19ba6;
   position: absolute;
-  top: 15%;
+  top: 100px;
   left: 50%; /* Mover el elemento a la mitad de su contenedor */
   transform: translateX(-50%); /* Desplazar el elemento a la izquierda en un 50% de su propio ancho */
 }
