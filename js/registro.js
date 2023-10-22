@@ -1,21 +1,24 @@
 
-async function post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, inputTipo){
-    return await fetch('http://localhost:8080/crear-usuario', {
+async function post(usuarioId, nombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, edad, tipo){
+    return await fetch('http://localhost:8080/usuario/crear', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            ID: inputID,
-            tipo: inputTipo,
-            NUsario: inputNombreusuario,
-            contrasena: inputcontrasena,
-            nombre: inputnombre,
-            apellido: inputapellido,
-            telefeono: inputtelefono,
-            correo: inputcorreo,
-            fecha: inputfecha
-        })
+        body: JSON.stringify
+        (
+            {
+                idjaveriana: usuarioId,
+                tipousuario: tipo,
+                nombreusuario: nombreusuario,
+                contrasena: inputcontrasena,
+                nombre: inputnombre,
+                apellido: inputapellido,
+                telefono: inputtelefono,
+                correoinstitucional: inputcorreo,
+                edad: edad
+            }
+        )
     })
 }
 
@@ -41,7 +44,7 @@ $(document).ready(function() {
         event.preventDefault();  // This prevents the form from being submitted
 
         var isValid = true;  // Assume the form is valid to start\\
-        const yearMinimo =2005;
+        const edadMin =13;
 
         var inputID = $('#ID').val();
         var inputNombreusuario = $('#Nombreusuario').val();
@@ -52,7 +55,21 @@ $(document).ready(function() {
         var inputcorreo = $('#correo').val();
         var regex = /@javeriana\.edu\.co$/;
         var inputfecha= $('#fecha').val();
-        var year = parseInt(inputfecha.split('-')[0]);    // Split the date string at '-' and take the first part
+
+        // Convertir la fecha del input en un objeto Date
+        var fechaNacimiento = new Date(inputFecha);
+
+        // Obtener la fecha actual
+        var fechaActual = new Date();
+
+        // Restar los años
+        var edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+        // Ajustar si el cumpleaños de este año todavía no ha ocurrido
+        if (fechaActual.getMonth() < fechaNacimiento.getMonth() ||
+        (fechaActual.getMonth() === fechaNacimiento.getMonth() && fechaActual.getDate() < fechaNacimiento.getDate())) {
+            edad--;
+        }
 
         var tipo;
 
@@ -106,29 +123,28 @@ $(document).ready(function() {
             $('.msg').text('Correo no pertenerce a la universidad Javeriana');
             showAlert();
         }
-        else if(year > yearMinimo) 
+        else if(edad < edadMin) 
         {
-            console.log("menor de 18");
+            console.log("menor de 13");
             isValid = false;
             $('.msg').text('Debe ser mayor de 18 años');
             showAlert();
         }
 
         if(isValid) {
-            const promesa =  post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, inputfecha, tipo);
+            
+            const promesa =  post(inputID, inputNombreusuario, inputcontrasena, inputnombre, inputapellido, inputtelefono, inputcorreo, edad, tipo);
 
             promesa
                 .then(res => {
                     console.log(res.ok)
             
-                    $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
-                
                     $('.msg').text('Cuenta creada satisfactoriamente');
                     showAlert();
                 })
                 .then(data => {
                     console.log(data)
-                    variable = data
+                    //interpretar valores
                 })
                 .catch(() => {
                     $('.msg').text('El nombre de usuario ya existe o usted ya existe en el sistema');

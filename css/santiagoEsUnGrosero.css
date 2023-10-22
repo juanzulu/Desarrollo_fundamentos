@@ -3,7 +3,7 @@
     src: url('https://fonts.googleapis.com/css2?family=Manjari:wght@400;700&display=swap');
   }
 
-  /* Estilo para el enlace */
+
 a {
     text-decoration: none; /* Quitar el subrayado */
     color: black; /* Hacer que el color sea el mismo que el del texto circundante */
@@ -13,11 +13,13 @@ a {
 a:hover {
     color: black; /* Mantener el mismo color al pasar el cursor */
 }
+
 body
 {
     font-family: system-ui;
     background: #ffffff;
 }
+
 header
 {
     color: rgb(18, 2, 4);
@@ -27,12 +29,16 @@ header
     width: 100%;
     display: flex;
     gap: 40px;
+    z-index: 1000;  /* Un valor arbitrariamente alto para asegurarse de que esté sobre otros elementos */
 }
+
+
 #logo
 {
     height: 70px;
     margin: 10px;
 }
+
 #imgpizza
 {
    width: 100%; 
@@ -40,6 +46,7 @@ header
    top: 110px;
    z-index: -50;
 }
+
 #imgabajo
 {
     width: 100%; 
@@ -47,15 +54,16 @@ header
     top: 110px;
     z-index: -50;
 }
+
 #userimg
 {
     height: 40px;
     position: relative;
     top: 20px;
-    z-index: -20;
+    z-index: 200;
 }
 
-#slogan1
+.slogan
 {
     font-family: 'Bowlby One', cursive;
 }
@@ -66,6 +74,7 @@ header
     font-family: Arial;
     border: none;
     font-size: larger;
+    z-index: 200;
 }
 
 .reg
@@ -77,7 +86,8 @@ header
     padding-inline: 60px;
     padding-block: 10px;
     border: none;
-
+    position: relative;
+    top: 40px;  /* Ajusta este valor según cuánto quieras desplazar el botón hacia abajo */
 }
 
 .botonesMenu
@@ -88,6 +98,12 @@ header
     height: 88%;
     gap: 40px;
 }
+
+#bienvenido
+{
+    position: relative;
+}
+
 .Bslogan
 {
    color: white;
@@ -109,5 +125,34 @@ header
 }
 #ingreso
 {
-    margin-top: 4%;
+    margin-top: 5%;
 }
+#userimg {
+    height: -40px;
+   
+}
+
+/* Ajustes para pantallas medianas */
+@media screen and (max-width: 944px) 
+{
+    #slogan2 {
+        font-size: 2px;
+    }
+    #slogan1 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1128px) 
+{
+    #slogan2 {
+        font-size: 28px;
+    }
+}
+@media screen and (max-width: 1027px) 
+{
+    #slogan2 {
+        font-size: 25px;
+    }
+}
+

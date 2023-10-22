@@ -12,68 +12,68 @@
     <section>
         <img id="logo" src="../imagenes/logo.png" alt="es el logo">
         
-        <div>
-            <H2 id="IngresarTitle">
-                Ingresar
-            </H2>
-            <hr id="LineaH">
-        </div>
-        
-        <div>
-            <p id="B1">
-            
-                ¡Bienvenido de nuevo!
-            </p>
-            <p id="B2">
-                Ingresa para disfrutar de Javereparto
-            </p>
-        </div>
-
-            <form action="../html/MenuUsuario.html" class="camposLlenar">
-                <input type="text" id="Nombreusuario" class="texto" placeholder="Nombre de usuario" required>
-                <input type="password" id="contrasena" class="texto"placeholder="Contraseña" required>
-                <button id="continuar" type="submit">
-                    <img id="flecha" src="../imagenes/FlechaContinuarInicioDeSesion.png" alt="">
-                    continuar
-                </button>
-            </form>
-    
-
-        <p id="soy">
-            soy
-        </p>
-
-        <div id="tipoUsuario">
-            <p >
-               Cliente
-            </p>
-            <label class="switch">
-                <input type="checkbox" id="Tipo">
-                <span class="slider"></span>
-            </label>
-            <p>
-                Domiciliario
-            </p> 
-        </div>
-        
-        <div class="alert">
-            <span class="fas fa-exclamation-circle"></span>
-            <span class="msg">ATENCION!!</span>
-            <div class="close-btn">
-               <span class="fas fa-times"> X </span>
+        <div id="contenedor">
+            <div>
+                <H2 id="IngresarTitle">
+                    Ingresar
+                </H2>
+                <hr id="LineaH">
             </div>
-         </div>
-
-        <a id="olvideContrasena" href="../html/RecuperarContrasena.html">
-            olvidé mi contraseña 
-        </a>
-        <div class="vertical-line"></div>
-        <a id="Registrarme" href="../html/Registro.html">
-            registrarme
-        </a>
-        <hr id="final">
-
-
+            
+            <div>
+                <p id="B1">
+                
+                    ¡Bienvenido de nuevo!
+                </p>
+                <p id="B2">
+                    Ingresa para disfrutar de Javereparto
+                </p>
+            </div>
+    
+                <form class="camposLlenar">
+                    <input type="text" id="Nombreusuario" class="texto" placeholder="Nombre de usuario" required>
+                    <input type="password" id="contrasena" class="texto"placeholder="Contraseña" required>
+                    <button id="continuar" type="submit">
+                        <img id="flecha" src="../imagenes/FlechaContinuarInicioDeSesion.png" alt="">
+                        continuar
+                    </button>
+                </form>
+        
+    
+            <p id="soy">
+                soy
+            </p>
+    
+            <div id="tipoUsuario">
+                <p >
+                   Cliente
+                </p>
+                <label class="switch">
+                    <input type="checkbox" id="Tipo">
+                    <span class="slider"></span>
+                </label>
+                <p>
+                    Domiciliario
+                </p> 
+            </div>
+            
+            <div class="alert">
+                <span class="msg">ATENCION!!</span>
+                <div class="close-btn">
+                   <span class="fas fa-times"> X </span>
+                </div>
+             </div>
+    
+            <a id="olvideContrasena" href="../html/RecuperarContrasena.html">
+                olvidé mi contraseña 
+            </a>
+            <div class="vertical-line"></div>
+            <a id="Registrarme" href="../html/Registro.html">
+                registrarme
+            </a>
+            <hr id="final">
+    
+        </div>
 
     </section>
     <script src="../js/inicioSesion.js"></script>

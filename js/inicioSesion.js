@@ -1,14 +1,14 @@
 
-async function post(inputNombreusuario, inputcontrasena, inputTipo){
-    return await fetch('http://localhost:8080/ingreso', {
+async function get(nombreUsuario, contrasena, tipousuario){
+    return await fetch('http://localhost:8080/usuario/ingreso', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            tipo: inputTipo,
-            NUsario: inputNombreusuario,
-            contrasena: inputcontrasena
+            tipousuario: tipousuario,
+            nombreusuario: nombreUsuario,
+            contrasena: contrasena
         })
     })
 }
@@ -50,26 +50,33 @@ $(document).ready(function() {
         
         if(isValid) 
         {
-            $(this).unbind('submit').submit(); /*ESTO SE QUITA*/
-            const promesa=post(inputNombreusuario, inputcontrasena, inputTipo);
+            const promesa=get(inputNombreusuario, inputcontrasena, inputTipo);
 
             promesa
                 .then(res => {
                     console.log(res.ok)
-                    res.json().then(data => {
-                        sessionStorage.setItem('idUsuario', data.id); //GUARDAR EL ID DEL USUARIO EN EL LOCAL STORAGE
-                        sessionStorage.setItem('fotoPerfil', data.avatar);    //PEDIR EL AVATAR Y GUARDARLO EN EL LOCAL STORAGE
-                    })
-                
-                    $(this).unbind('submit').submit(); // Desvincula el evento 'submit' y luego envía el formulario
-                    
-                    
+                    if (res.ok) 
+                    {
+                        res.json().then(data => {
+                            sessionStorage.setItem('idUsuario', data.id); //GUARDAR EL ID DEL USUARIO EN EL LOCAL STORAGE
+                            sessionStorage.setItem('fotoPerfil', data.Foto.foto);    //PEDIR EL AVATAR Y GUARDARLO EN EL LOCAL STORAGE
+                            // Desvincula el evento 'submit' y luego envía el formulario
+                            window.location.href = "../html/MenuUsuario.html";
+                        })
+                    }
+                    else
+                    {
+                        $('.msg').text(`Existe un error en la información`);
+                        showAlert();
+                    }
+                     
                 })
-                .catch(() => {
-                    $('.msg').text('Existe un error en la información');
+                .catch(error => {
+                    $('.msg').text(`Existe un error en la información`);
                     showAlert();
-                    console.log('error')
+                    console.log('error:', error);
                 })
+                
         }
     });
 });

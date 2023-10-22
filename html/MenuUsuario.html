@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/MenuUsuario.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
+    <title>Menu usuario</title>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 </head>
 <body>
@@ -30,7 +30,7 @@
 
     <a href="../html/InfoCuenta.html">
       <div id="fotoPerfil">
-        <img id="userimg" src="../imagenes/usuario.webp" alt="usericon">
+        <img id="userimg" src="" alt="usericon">
       </div>
     </a>
 
@@ -44,23 +44,25 @@
     </h3>
 
     <div class="busquedaRapida">
-     <a class="botonBusqueda" href="../html/Busqueda.html">
+     <a id="promo" class="botonBusqueda" href="../html/Busqueda.html">
          <img id="porcentaje" src="../imagenes/porcentaje.png" alt="usericon">
          promociones
      </a>
-     <a class="botonBusqueda" href="../html/Busqueda.html">
+     <a id="popu" class="botonBusqueda" href="">
         <img id="estrella" src="../imagenes/estrellafav.png" alt="usericon">
          populares
      </a>
-     <a class="botonBusqueda" href="../html/Busqueda.html">
+     <a id="groceries" class="botonBusqueda" href="../html/Busqueda.html">
          <img id="tienda" src="../imagenes/tienda.png" alt="usericon">
          tiendas
      </a>
     </div>
 
-    <h3 class="textoP" id="tiendas">
-     Las tiendas
-    </h3>
+   
+    <h3 class="textoP" id="tiendas2">
+      Las tiendas
+     </h3>
+ 
 
     <div class="scrollBoxTienda">
     
@@ -100,7 +102,7 @@
 
           <div id="encabezado">
             <h4  id="precioText">
-              $precio
+              10000
             </h4>
             <h4 id="DescText">
               descuento %
@@ -130,15 +132,10 @@
           <p id="textoIngred">
             texto Ingredientes
           </p>
-        
-          <div id="RadioOptions1">
-            <input type="radio" id="tienda" name="TiendaSeleccion" value="Tienda1">
-            <label id="labelt" for="tienda1">Tienda 1</label> <label id="labelDisp" for="tienda1">Disponible</label>
-          </div>
 
-          <div id="RadioOptions2">
-            <input type="radio" id="tienda" name="TiendaSeleccion" value="Tienda2">
-            <label id="labelt" for="tienda2">Tienda 2</label>  <label id="labelDisp" for="tienda2">Disponible</label>
+
+          <div id="RadioOptions">
+
           </div>
           
   
@@ -151,7 +148,7 @@
         </button>
 
         <button class="Bspagar" id="BAgregarEirPagar">
-          Agregar e ir a pagar $$$
+          Agregar e ir a pagar 0
         </button>
 
           <div class="sumatoriadiv" >
@@ -174,7 +171,7 @@
             <img id="equis" src="../imagenes/equis.png" alt="equis">
           </a>
 
-          <a id="cerrasesion" class="botonazul" href="/Users/sophiaaristizabal/Documents/GitHub/Desarrollo_fundamentos/index.html">
+          <a id="cerrasesion" class="botonazul" href="../index.html">
             cerrar sesion
           </a>
           <button id="ayuda" class="botonazul">
@@ -187,26 +184,30 @@
               <h2 id="secciones">
               secciones
             </h2>
-            <button id="mapa" class="botonmenu">
-              <span class="textoBotonm">Mapa de tiendas</span>
-              <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-            </button> 
-            <button id="Productos" class="botonmenu">
-              <span class="textoBotonp">Productos</span>
-              <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-            </button> 
-            <button id="tiendas" class="botonmenu">
-              <span class="textoBotont">Tiendas</span>
-              <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-            </button> 
-            <button id="Historial" class="botonmenu">
-              <span class="textoBotonh">Historial de pedidos</span>
-              <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-            </button> 
-            <button id="estado" class="botonmenu">
-              <span class="textoBotone">Estado del pedido</span>
-              <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-            </button> 
+            
+            <div class="containerbotones">
+              <a id="mapa" class="botonmenu" href="../html/MapaUniversidadComida.html">
+                <span class="textoBotonm">Mapa de tiendas</span>
+                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+              </a> 
+              <button id="Productos" class="botonmenu">
+                <span class="textoBotonp">Productos</span>
+                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+              </button> 
+              <button id="tiendas" class="botonmenu">
+                <span class="textoBotont">Tiendas</span>
+                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+              </button> 
+              <button id="Historial" class="botonmenu">
+                <span class="textoBotonh">Historial de pedidos</span>
+                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+              </button> 
+              <button id="estado" class="botonmenu">
+                <span class="textoBotone">Estado del pedido</span>
+                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+              </button> 
+            </div>
+            
           </div>
           
           <hr id="hr2menu">
@@ -214,14 +215,17 @@
               <h2 id="cuenta">
               cuenta
             </h2>
-            <a id="infocuenta" class="botonmenu" href="../html/InfoCuenta.html">
-              <span class="textoBotoni">Información de cuenta</span>
-              <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-            </a>
-            <butto class="botonmenu" id="conf">
-              <span class="textoBotonb">Configuraciones</span>
-              <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-            </button>
+            <div class="containerbotones">
+              <a id="infocuenta" class="botonmenu" href="../html/InfoCuenta.html">
+                <span class="textoBotoni">Información de cuenta</span>
+                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+              </a>
+              <butto class="botonmenu" id="conf">
+                <span class="textoBotonb">Configuraciones</span>
+                <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
+              </button>
+            </div>
+            
           </div>
           
 

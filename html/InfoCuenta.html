@@ -21,9 +21,6 @@
     <a class="btnTop" id="menu" href="#" onclick="show('pestanadelmenu')">
         <img id="opciones" src="../imagenes/menu.png" alt="menu">
     </a>
-  
-
-    <input type="text" id="barrabusqueda" class="texto" placeholder="Ingresar Busqueda" required>
     
   </header>
 
@@ -31,14 +28,15 @@
     <h1 id="Titulo">
         Editar perfil
     </h1>
-    <a onclick="show('DIVAvatares')">
-      <div id="fotoPerfil">
-        <img id="foto" src="../imagenes/usuario.webp" alt="foto de perfil">
-      </div>
-    </a>
-
-    <a id="mas" onclick="show('DIVAvatares')">+</a>
-
+    <div id="fotoDiv">
+      <a onclick="show('DIVAvatares')">
+        <div id="fotoPerfil">
+          <img id="foto" src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posición-de-foto-gris-vectores-de.jpg" alt="foto de perfil">
+        </div>
+      </a>
+  
+      <a id="mas" onclick="show('DIVAvatares')">+</a>
+    </div>
     <output></output>
     
    
@@ -59,7 +57,7 @@
       <p id="tel">Teléfono</p>
        <input type="text" id="telefono" class="texto" placeholder="Telefono"  required>
       <p id="email">Correo</p>
-       <input type="text" id="correo" class="texto" placeholder="Correo Institucional" value="so.aristizabal@gmail.com" disabled >
+       <input type="text" id="correo" class="texto" placeholder="Correo Institucional" value="" disabled >
     
       <button id="guardar"  type="submit">
         Guardar
@@ -78,25 +76,27 @@
 
     <div id="pestanadelmenu" class="pestanamenu">
 
-        <img id="logomenu" src="../imagenes/logo.png" alt="es el logo">
+      <img id="logomenu" src="../imagenes/logo.png" alt="es el logo">
 
-        <a id="equismenu" href="#" onclick="hide('pestanadelmenu')">
-          <img id="equis" src="../imagenes/equis.png" alt="equis">
-        </a>
+      <a id="equismenu" href="#" onclick="hide('pestanadelmenu')">
+        <img id="equis" src="../imagenes/equis.png" alt="equis">
+      </a>
 
-        <a id="cerrasesion" class="botonazul" href="/Users/sophiaaristizabal/Documents/GitHub/Desarrollo_fundamentos/index.html">
-          cerrar sesion
-        </a>
-        <a id="ayuda" class="botonazul" href="../html/MenuUsuario.html">
-          Menú
-        </a>
+      <a id="cerrasesion" class="botonazul" href="/Users/sophiaaristizabal/Documents/GitHub/Desarrollo_fundamentos/index.html">
+        cerrar sesion
+      </a>
+      <button id="ayuda" class="botonazul">
+        ayuda
+      </button>
 
-        <hr id="hr1menu" >
+      <hr id="hr1menu" >
 
-        <div class="sec">
-            <h2 id="secciones">
-            secciones
-          </h2>
+      <div class="sec">
+          <h2 id="secciones">
+          secciones
+        </h2>
+        
+        <div class="containerbotones">
           <button id="mapa" class="botonmenu">
             <span class="textoBotonm">Mapa de tiendas</span>
             <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
@@ -119,24 +119,29 @@
           </button> 
         </div>
         
-        <hr id="hr2menu">
-        <div class="sec">
-            <h2 id="cuenta">
-            cuenta
-          </h2>
-          <button id="infocuenta" class="botonmenu">
+      </div>
+      
+      <hr id="hr2menu">
+      <div class="sec">
+          <h2 id="cuenta">
+          cuenta
+        </h2>
+        <div class="containerbotones">
+          <a id="infocuenta" class="botonmenu" href="../html/InfoCuenta.html">
             <span class="textoBotoni">Información de cuenta</span>
             <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-          </button>
+          </a>
           <butto class="botonmenu" id="conf">
             <span class="textoBotonb">Configuraciones</span>
             <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
           </button>
         </div>
         
-
       </div>
+      
 
+    </div>
+    
      <div class="alert">
       <span class="fas fa-exclamation-circle"></span>
       <span class="msg" id="tituloNotif">ATENCIÓN</span>
@@ -180,39 +185,39 @@
       </div>
 
       <div class="circuloAvatar" id="Avatar2"  >
-        <img class="fotoAvatar"  src="../imagenes/avatar2-H.png" alt="foto Avatar" onclick="changeProfileImage(this.src,'DIVAvatares')">
+        <img class="fotoAvatar"  src="https://github.com/juanzulu/Desarrollo_fundamentos/blob/95e00c843c6300b4c7410df8347fbd5c7a4aef6d/imagenes/avatar2-H.png?raw=true" alt="foto Avatar" onclick="changeProfileImage(this.src,'DIVAvatares')">
       </div>
 
       <div class="circuloAvatar" id="Avatar3"  >
-        <img class="fotoAvatar"  src="../imagenes/avatar3-H.png" alt="foto Avatar" onclick="changeProfileImage(this.src,'DIVAvatares')">
+        <img class="fotoAvatar"  src="https://github.com/juanzulu/Desarrollo_fundamentos/blob/95e00c843c6300b4c7410df8347fbd5c7a4aef6d/imagenes/avatar3-H.png?raw=true" alt="foto Avatar" onclick="changeProfileImage(this.src,'DIVAvatares')">
       </div>
 
       <div class="circuloAvatar" id="Avatar4" >
-        <img class="fotoAvatar"  src="../imagenes/avatar4-H.png" alt="foto Avatar" onclick="changeProfileImage(this.src,'DIVAvatares')">
+        <img class="fotoAvatar"  src="https://github.com/juanzulu/Desarrollo_fundamentos/blob/95e00c843c6300b4c7410df8347fbd5c7a4aef6d/imagenes/avatar4-H.png?raw=true" alt="foto Avatar" onclick="changeProfileImage(this.src,'DIVAvatares')">
       </div>
 
       <div class="circuloAvatar" id="Avatar5">
-        <img class="fotoAvatar"  src="../imagenes/avatar5-H.png" alt="foto Avatar" onclick="changeProfileImage(this.src,'DIVAvatares')">
+        <img class="fotoAvatar"  src="https://github.com/juanzulu/Desarrollo_fundamentos/blob/95e00c843c6300b4c7410df8347fbd5c7a4aef6d/imagenes/avatar5-H.png?raw=true" alt="foto Avatar" onclick="changeProfileImage(this.src,'DIVAvatares')">
       </div>
 
       <div class="circuloAvatar" id="Avatar6" >
-        <img class="fotoAvatar"  src="../imagenes/avatar1-M.png" alt="foto Avatar" onclick="changeProfileImage(this.src,'DIVAvatares')">
+        <img class="fotoAvatar"  src="https://github.com/juanzulu/Desarrollo_fundamentos/blob/main/imagenes/avatar1-M.png?raw=true" alt="foto Avatar" onclick="changeProfileImage(this.src,'DIVAvatares')">
       </div>
 
       <div class="circuloAvatar" id="Avatar7">
-        <img class="fotoAvatar"  src="../imagenes/avatar2-M.png" alt="foto Avatar"  onclick="changeProfileImage(this.src,'DIVAvatares')">
+        <img class="fotoAvatar"  src="https://github.com/juanzulu/Desarrollo_fundamentos/blob/main/imagenes/avatar2-M.png?raw=true" alt="foto Avatar"  onclick="changeProfileImage(this.src,'DIVAvatares')">
       </div>
 
       <div class="circuloAvatar" id="Avatar8"  >
-        <img class="fotoAvatar"  src="../imagenes/avatar3-M.png" alt="foto Avatar"  onclick="changeProfileImage(this.src,'DIVAvatares')">
+        <img class="fotoAvatar"  src="https://github.com/juanzulu/Desarrollo_fundamentos/blob/main/imagenes/avatar3-M.png?raw=true" alt="foto Avatar"  onclick="changeProfileImage(this.src,'DIVAvatares')">
       </div>
 
       <div class="circuloAvatar" id="Avatar9"  >
-        <img class="fotoAvatar"  src="../imagenes/avatar4-M.png" alt="foto Avatar"  onclick="changeProfileImage(this.src,'DIVAvatares')">
+        <img class="fotoAvatar"  src="https://github.com/juanzulu/Desarrollo_fundamentos/blob/main/imagenes/avatar4-M.png?raw=true" alt="foto Avatar"  onclick="changeProfileImage(this.src,'DIVAvatares')">
       </div>
 
       <div class="circuloAvatar" id="Avatar10"  >
-        <img class="fotoAvatar"  src="../imagenes/avatar5-M.png" alt="foto Avatar"  onclick="changeProfileImage(this.src, 'DIVAvatares')">
+        <img class="fotoAvatar"  src="https://github.com/juanzulu/Desarrollo_fundamentos/blob/main/imagenes/avatar5-M.png?raw=true" alt="foto Avatar"  onclick="changeProfileImage(this.src, 'DIVAvatares')">
       </div>
 
     </div>

@@ -11,11 +11,16 @@ header
     position: fixed;
     top: 0;
     width: 100%;
-    height: 10%;
+    height: 73px;
     gap: 40px;
     z-index: 10;
 }
 
+a {
+    text-decoration: none; /* Quitar el subrayado */
+    font-family: 'Nunito', sans-serif;
+    color: black; /* Hacer que el color sea el mismo que el del texto circundante */
+}
 
 #logo
 {
@@ -97,38 +102,10 @@ header
     z-index: 10;
 }
 
-
-.busquedaRapida
-{
-    height: 40px;
-    position: absolute;
-    top: 40%;
-    display: flex;
-    gap: 10px;
-    left: 180px;
-}
-
-.botonBusqueda
-{
-    border-top-left-radius: 15px;   /* Top-left corner rounded */
-    border-bottom-left-radius: 15px; /* Bottom-left corner rounded */
-    border-top-right-radius: 15px;   /* Top-left corner rounded */
-    border-bottom-right-radius: 15px; /* Bottom-left corner rounded */
-    width: 155px;
-    background-color: transparent;
-    display: flex;
-    align-items: center; /* Centrar verticalmente */
-    border: 1px solid darkgray;
-    border-width: 2px;
-    text-decoration: none; /* Esto quita el subrayado */
-    color: black;          /* Esto establece el color del texto en negro */
-    padding-left: 10px; /* Este es el espacio que se añade a la izquierda entre el borde y la imagen */
-}
-
 #res
 {
     position: absolute;
-    top: 8%;
+    top: 80px;
     left: 4%;
     font-size: xx-large;
 }
@@ -257,7 +234,7 @@ body.overlayActive {
     max-height: 425px; /* Puedes ajustar este valor según tus necesidades */
     overflow-y: auto;
     position: relative;
-    max-width: 685px; 
+    max-width: 58%; 
 }
 
 .scrollBoxinner::-webkit-scrollbar
@@ -386,24 +363,7 @@ body.overlayActive {
     margin-top: 3%;
 }
 
-/* Añade margen a la izquierda de los labels para separarlos más del botón de radio */
-#labelDisp
-{
-    margin-left: 80px; 
-    background-color: #8ED991;
-    color: #ffffff;
-    height: 35px;
-    width: 140px;
-    border-top-left-radius: 20px;   /* Top-left corner rounded */
-    border-bottom-left-radius: 20px; /* Bottom-left corner rounded */
-    border-top-right-radius: 20px;   /* Top-left corner rounded */
-    border-bottom-right-radius: 20px; /* Bottom-left corner rounded */
-    justify-content: center;  /* Centra el contenido horizontalmente */
-    align-items: center; 
-    display: flex;  
-    font-weight: lighter;   
-    margin-top: 2%;
-}
+
 #labelt
 {
     margin-top: 3%;
@@ -524,6 +484,7 @@ body.overlayActive {
     height: 20px;
     margin-left: 210px;
 }
+
 #logomenu
 {
     height: 80px;
@@ -565,93 +526,95 @@ body.overlayActive {
     position: absolute;
     z-index: 2000;
 }
-
 #cerrasesion
 {
     left: 20%;
-    top: 15.9%;
+    top: 117px;
     z-index: 2000;
 }
 #ayuda
 {
+    top: 117px;
     left: 54%;
 }
 
 #secciones
 {
    position: absolute;
-   top: 26%; 
+   top: 180px; 
 }
+
+a {
+    text-decoration: none; /* Quitar el subrayado */
+}
+/* Estilo para el contenedor de botones */
+.containerbotones {
+  display: flex;
+  flex-direction: column; /* Alinea los botones verticalmente */
+  align-items: center; /* Alinea los botones al centro horizontalmente */
+  width: 100%;
+}
+
+/* Estilo para cada botón */
+.botonmenu {
+  display: flex; /* Hace de cada botón un contenedor Flexbox */
+  justify-content: space-between; /* Distribuye el espacio entre el texto y la imagen */
+  align-items: center; /* Alinea el texto y la imagen verticalmente al centro */
+  width: 90%; /* Ocupa todo el ancho del contenedor */
+  padding: 10px; /* Ajusta el espaciado interno según lo necesites */
+  border: none; /* Elimina el borde, si es necesario */
+  background-color: transparent; /* O el color que prefieras */
+  cursor: pointer; /* Estilo de cursor al pasar el ratón por encima */
+  z-index: 2000;
+}
+
+/* Estilo para la imagen de flecha de cada botón */
+.botonmenu #arrow {
+  margin-left: 10px; /* Espaciado entre el texto y la flecha */
+}
+
 #mapa
 {
-    top: 32%; 
+    top: 230px; 
 }
-.textoBotonm
-{
-    margin-right: 28px;
-}
+
 #Productos
 {
-    top: 40%; 
+    top:280px; 
 }
-.textoBotonp
+
+#tiendasMenu
 {
-    margin-right: 65px;
+    top:330px; 
 }
-#tiendas2
+
+#historial
 {
-    top: 48%; 
-    left: 2.8%;
+    top: 382px; 
 }
-.textoBotont
+
+#estado0
 {
-    margin-right: 76px;
+    top: 450px; 
 }
-#Historial
-{
-    top: 57%; 
-}
-.textoBotonh
-{
-    margin-right: 7px;
-}
-#estado
-{
-    top: 65%; 
-}
-.textoBotone
-{
-    margin-right: 16px;
-}
+
 #cuenta
 {
     position: absolute;
-    top: 73%;
+    top: 540px;
 }
 #infocuenta
 {
-    left: 1%;
-    top: 81%;
+    top: 600px;
     z-index: 2000;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
     color: black;
+}
 
-}
-.textoBotoni
-{
-    margin-right: -8px;
-}
 #conf
 { 
-    left: 4%;
-    top: 90%;
+    top: 650px;
 }
-.textoBotonb
-{
-    margin-right: 8px;
-}
+
 #hr1menu
 {
   margin-top: 25%;
@@ -660,9 +623,14 @@ body.overlayActive {
 {
   margin-top: 88%;
 }
-a {
-    text-decoration: none; /* Quitar el subrayado */
-    font-family: 'Nunito', sans-serif;
+
+#hr1menu
+{
+  margin-top: 25%;
+}
+#hr2menu
+{
+  margin-top: 88%;
 }
 
 
@@ -714,7 +682,7 @@ a {
 
 #resultado {
     left: 1%;
-    top: 20%;
+    top: 150px;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -738,4 +706,44 @@ a {
     background-color: #555; 
 }
 
+@media screen and (max-width: 1120px) 
+{
+    #slogan1
+    {
+        display: none;
+    }
 
+    #barrabusqueda
+    {
+        right: 25%;
+    }
+}
+
+@media screen and (max-width: 1227px) 
+{
+    #BAgregarSeguirComprando
+    {
+         width: 190px;
+    }
+    #BAgregarEirPagar
+    {
+        background-color: rgb(153, 147, 147);
+        right: 3%;
+        width: 190px;
+    }
+ 
+    .sumatoriadiv
+    {
+        right: 47.2%;
+    }
+
+}
+
+@media screen and (max-width: 1145px) 
+{
+    #circuloPRODUCTO 
+    {   
+        height: 300px;
+    }
+
+}
