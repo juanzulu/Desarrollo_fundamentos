@@ -57,7 +57,7 @@ $(document).ready(function() {
         var inputfecha= $('#fecha').val();
 
         // Convertir la fecha del input en un objeto Date
-        var fechaNacimiento = new Date(inputFecha);
+        var fechaNacimiento = new Date(inputfecha);
 
         // Obtener la fecha actual
         var fechaActual = new Date();
@@ -137,10 +137,16 @@ $(document).ready(function() {
 
             promesa
                 .then(res => {
-                    console.log(res.ok)
-            
-                    $('.msg').text('Cuenta creada satisfactoriamente');
-                    showAlert();
+                    if (res.ok) 
+                    {
+                        $('.msg').text('Cuenta creada satisfactoriamente');
+                        showAlert();
+                    }
+                    else
+                    {
+                        $('.msg').text(`Existe un error en la información`);
+                        showAlert();
+                    }
                 })
                 .then(data => {
                     console.log(data)

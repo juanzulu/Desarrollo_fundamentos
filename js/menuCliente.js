@@ -93,6 +93,7 @@ async function getProductos(){
       }
   })
 }
+
 //se llama la peticion y se guarda en promesaProductos
 const promesaProductos = getProductos()
 promesaProductos
@@ -122,7 +123,7 @@ function generateProductList(data) {
         <div class="producto">
             <div class="circuloproducto">
                 <a href="#" class="productLink" id="${data[i].id}">
-                    <img class="fotominipRODUCTO" src="${data[i].foto}" alt="foto Producto">
+                    <img class="fotominipRODUCTO" src="${data[i].foto.foto}" alt="foto Producto">
                 </a>
             </div>
             <p class="nombreminiProducto">
@@ -184,7 +185,7 @@ function generateInfoProducto(data) {
   $('#tituloProducto').text(data.nombre);
 
   //foto del producto
-  $("#fotopRODUCTO").attr("src", data.foto);
+  $("#fotopRODUCTO").attr("src", data.foto.foto);
 
   //calcula el precio actual con base en si tiene promocion o no
   const precioTot=data.precio-data.precio*data.promocion;
