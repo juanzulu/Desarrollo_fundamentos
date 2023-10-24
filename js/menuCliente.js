@@ -42,6 +42,7 @@ function asignarFoto()
 {
   if (sessionStorage.getItem('fotoPerfil')) 
   {
+    console.log(sessionStorage.getItem('fotoPerfil'))
     document.getElementById('userimg').src = sessionStorage.getItem('fotoPerfil');
   }
   else
