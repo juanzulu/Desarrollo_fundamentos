@@ -18,11 +18,13 @@ async function getInfoUsuario()
         }
     })
 }
+
 //obtiene la informacion y la pone en los campos de texto 
 const promesaInformacionUsuario = getInfoUsuario()
 
 promesaInformacionUsuario
 .then(res => {
+
     console.log(res.ok)
 })
 .then(data => {
@@ -85,7 +87,9 @@ async function postInfoUsuario(inputNombreusuario, inputfoto, inputnombre, input
             nombre: inputnombre,
             apellido: inputapellido,
             telefeono: inputtelefono,
-            foto: inputfoto
+            foto:{
+                foto:inputfoto
+            }
         })
     })
 }
@@ -227,10 +231,20 @@ $(document).ready(function() {
             
             promesaUpdateInformacionUsuario
             .then(res => {
-                saveToSessionStorage();
-                $('.msg2').text('Cambios guardados satisfactoriamente');
-                showAlert2();
-                console.log(res.ok)
+
+                if(res.ok)
+                {
+                    saveToSessionStorage();
+                    $('.msg2').text('Cambios guardados satisfactoriamente');
+                    showAlert2();
+                }
+                else
+                {
+                    console.log('error')
+                    $('.msg2').text('Cambios no guardados, vuelva a tratar');
+                    showAlert2();
+                }
+                    
             })
             .catch(() => {
                 console.log('error')

@@ -8,23 +8,6 @@ class ProductosPedidos {
   }
 }
 
-function InicializarPedido()
-{
-  // Intenta obtener el pedido del sessionStorage
-  const pedidoGuardado = sessionStorage.getItem('pedido');
-
-  // Si no hay un pedido guardado...
-  if (!pedidoGuardado) {
-      const pedido = {
-        total: 0, 
-        productos: []
-      }
-      // Convierte el objeto 'pedido' a una cadena JSON y almacénalo en el sessionStorage
-      sessionStorage.setItem('pedido', JSON.stringify(pedido));
-  }
-
-}
-
 function EvaluarIngresoDeSesion()
 {
   if(!sessionStorage.getItem('idUsuario'))
@@ -483,7 +466,6 @@ function Ver()
     generateTiendas(".scrollBoxTienda");
 
      //EvaluarIngresoDeSesion();
-    InicializarPedido();
   
     asignarFoto();
   
