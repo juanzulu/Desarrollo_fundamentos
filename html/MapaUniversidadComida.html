@@ -32,44 +32,329 @@
       </div>
 
       <div class="contenedor">
-        <button class="btnMidlle" id="boton1"></button>
-        <button class="btnMidlle" id="boton2"></button>
-        <button class="btnMidlle" id="boton3"></button>
-        <button class="btnMidlle" id="boton4"></button>
-        <button class="btnMidlle" id="boton5"></button>
-        <button class="btnMidlle" id="boton6"></button>
-        <button class="btnMidlle" id="boton7"></button>
-        <button class="btnMidlle" id="boton8"></button>
-        <button class="btnMidlle" id="boton9"></button>
-        <button class="btnMidlle" id="boton10"></button>
-        <button class="btnMidlle" id="boton11"></button>
-        <button class="btnMidlle" id="boton12"></button>
-        <button class="btnMidlle" id="boton13"></button>
-        <button class="btnMidlle" id="boton14"></button>
-        <button class="btnMidlle" id="boton15"></button>
-        <button class="btnMidlle" id="boton16"></button>
-        <button class="btnMidlle" id="boton17"></button>
-        <button class="btnMidlle" id="boton18"></button>
-        <button class="btnMidlle" id="boton19"></button>
-        <button class="btnMidlle" id="boton20"></button>
-        <button class="btnMidlle" id="boton21"></button>
-        <button class="btnMidlle" id="boton22"></button>
-        <button class="btnMidlle" id="boton23"></button>
-        <button class="btnMidlle" id="boton24"></button>
-        <button class="btnMidlle" id="boton25"></button>
-        <button class="btnMidlle" id="boton26"></button>
-        <button class="btnMidlle" id="boton27"></button>
-        <button class="btnMidlle" id="boton28"></button>
-        <button class="btnMidlle" id="boton29"></button>
-        <button class="btnMidlle" id="boton30"></button>
-        <button class="btnMidlle" id="boton31"></button>
-        <button class="btnMidlle" id="boton32"></button>
-        <button class="btnMidlle" id="boton33"></button>
-        <button class="btnMidlle" id="boton34"></button>
-        <button class="btnMidlle" id="boton35"></button>
-        <img id="map_uni" src="../imagenes/mapaUniversidad.png" alt="MapaU" usemap="#nombre-del-mapa">
+        <a class="btnMidlle" id="boton1" onclick="mostrarPopup('popup-boton1')"></a>
+        <a class="btnMidlle" id="boton2" onclick="mostrarPopup('popup-boton2')"></a>
+        <a class="btnMidlle" id="boton3" onclick="mostrarPopup('popup-boton3')"></a>
+        <a class="btnMidlle" id="boton4" onclick="mostrarPopup('popup-boton4')"></a>
+        <a class="btnMidlle" id="boton5" onclick="mostrarPopup('popup-boton5')"></a>
+        <a class="btnMidlle" id="boton6" onclick="mostrarPopup('popup-boton6')"></a>
+        <a class="btnMidlle" id="boton7" onclick="mostrarPopup('popup-boton7')"></a>
+        <a class="btnMidlle" id="boton8" onclick="mostrarPopup('popup-boton8')"></a>
+        <a class="btnMidlle" id="boton9" onclick="mostrarPopup('popup-boton9')"></a>
+        <a class="btnMidlle" id="boton10" onclick="mostrarPopup('popup-boton10')"></a>
+        <a class="btnMidlle" id="boton11" onclick="mostrarPopup('popup-boton11')"></a>
+        <a class="btnMidlle" id="boton12" onclick="mostrarPopup('popup-boton12')"></a>
+        <a class="btnMidlle" id="boton13" onclick="mostrarPopup('popup-boton13')"></a>
+        <a class="btnMidlle" id="boton14" onclick="mostrarPopup('popup-boton14')"></a>
+        <a class="btnMidlle" id="boton15" onclick="mostrarPopup('popup-boton15')"></a>
+        <a class="btnMidlle" id="boton16" onclick="mostrarPopup('popup-boton16')"></a>
+        <a class="btnMidlle" id="boton17" onclick="mostrarPopup('popup-boton17')"></a>
+        <a class="btnMidlle" id="boton18" onclick="mostrarPopup('popup-boton18')"></a>
+        <a class="btnMidlle" id="boton19" onclick="mostrarPopup('popup-boton19')"></a>
+        <a class="btnMidlle" id="boton20" onclick="mostrarPopup('popup-boton20')"></a>
+        <a class="btnMidlle" id="boton21" onclick="mostrarPopup('popup-boton21')"></a>
+        <a class="btnMidlle" id="boton22" onclick="mostrarPopup('popup-boton22')"></a>
+        <a class="btnMidlle" id="boton23" onclick="mostrarPopup('popup-boton23')"></a>
+        <a class="btnMidlle" id="boton24" onclick="mostrarPopup('popup-boton24')"></a>
+        <a class="btnMidlle" id="boton25" onclick="mostrarPopup('popup-boton25')"></a>
+        <a class="btnMidlle" id="boton26" onclick="mostrarPopup('popup-boton26')"></a>
+        <a class="btnMidlle" id="boton27" onclick="mostrarPopup('popup-boton27')"></a>
+        <a class="btnMidlle" id="boton28" onclick="mostrarPopup('popup-boton28')"></a>
+        <a class="btnMidlle" id="boton29" onclick="mostrarPopup('popup-boton29')"></a>
+        <a class="btnMidlle" id="boton30" onclick="mostrarPopup('popup-boton30')"></a>
+        <a class="btnMidlle" id="boton31" onclick="mostrarPopup('popup-boton31')"></a>
+        <a class="btnMidlle" id="boton32" onclick="mostrarPopup('popup-boton32')"></a>
+        <a class="btnMidlle" id="boton33" onclick="mostrarPopup('popup-boton33')"></a>
+        <a class="btnMidlle" id="boton34" onclick="mostrarPopup('popup-boton34')"></a>
+        <a class="btnMidlle" id="boton35" onclick="mostrarPopup('popup-boton35')"></a>
+        
+
+        <img id="map_uni" src="../imagenes/mapaUniversidad.png" alt="MapaU">
     </div>
-  
+
+    <div class="popup" id="popup-boton1">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 1</h2>
+        <p>Información relevante para el botón 1.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton1')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton2">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 2</h2>
+        <p>Información relevante para el botón 2.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton2')">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="popup" id="popup-boton3">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 3</h2>
+        <p>Información relevante para el botón 3.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton3')">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="popup" id="popup-boton4">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 4</h2>
+        <p>Información relevante para el botón 4.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton4')">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="popup" id="popup-boton5">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 5</h2>
+        <p>Información relevante para el botón 5.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton5')">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="popup" id="popup-boton6">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 6</h2>
+        <p>Información relevante para el botón 6.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton6')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton7">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 7</h2>
+        <p>Información relevante para el botón 7.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton7')">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="popup" id="popup-boton8">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 8</h2>
+        <p>Información relevante para el botón 8.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton8')">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="popup" id="popup-boton9">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 9</h2>
+        <p>Información relevante para el botón 9.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton9')">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="popup" id="popup-boton10">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 10</h2>
+        <p>Información relevante para el botón 10.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton10')">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="popup" id="popup-boton11">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 11</h2>
+        <p>Información relevante para el botón 11.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton11')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton12">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 12</h2>
+        <p>Información relevante para el botón 12.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton12')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton13">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 13</h2>
+        <p>Información relevante para el botón 13.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton13')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton14">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 14</h2>
+        <p>Información relevante para el botón 14.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton14')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton15">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 15</h2>
+        <p>Información relevante para el botón 15.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton15')">Cerrar</button>
+      </div>
+    </div>
+
+    <div class="popup" id="popup-boton16">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 16</h2>
+        <p>Información relevante para el botón 16.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton16')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton17">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 17</h2>
+        <p>Información relevante para el botón 17.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton17')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton18">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 18</h2>
+        <p>Información relevante para el botón 18.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton18')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton19">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 19</h2>
+        <p>Información relevante para el botón 19.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton19')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton20">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 20</h2>
+        <p>Información relevante para el botón 20.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton20')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton21">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 21</h2>
+        <p>Información relevante para el botón 21.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton21')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton22">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 22</h2>
+        <p>Información relevante para el botón 22.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton22')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton23">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 23</h2>
+        <p>Información relevante para el botón 23.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton23')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton24">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 24</h2>
+        <p>Información relevante para el botón 24.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton24')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton25">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 25</h2>
+        <p>Información relevante para el botón 25.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton25')">Cerrar</button>
+      </div>
+    </div>
+    
+
+    <div class="popup" id="popup-boton26">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 26</h2>
+        <p>Información relevante para el botón 26.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton26')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton27">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 27</h2>
+        <p>Información relevante para el botón 27.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton27')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton28">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 28</h2>
+        <p>Información relevante para el botón 28.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton28')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton29">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 29</h2>
+        <p>Información relevante para el botón 29.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton29')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton30">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 30</h2>
+        <p>Información relevante para el botón 30.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton30')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton31">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 31</h2>
+        <p>Información relevante para el botón 31.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton31')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton32">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 32</h2>
+        <p>Información relevante para el botón 32.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton32')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton33">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 33</h2>
+        <p>Información relevante para el botón 33.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton33')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton34">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 34</h2>
+        <p>Información relevante para el botón 34.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton34')">Cerrar</button>
+      </div>
+    </div>
+    
+    <div class="popup" id="popup-boton35">
+      <div class="popup-content">
+        <h2>Contenido del Pop-up 35</h2>
+        <p>Información relevante para el botón 35.</p>
+        <button class="cerrar-popup" onclick="cerrarPopup('popup-boton35')">Cerrar</button>
+      </div>
+    </div>
+    
+    
+    
     
   </header>
 
@@ -107,9 +392,11 @@
           <button id="mapa" class="botonmenu">
             <span class="textoBotonk">Mapa</span>
             <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
-        </button>  
+          </button>  
         </div>
-        <br><br><br>
+
+          <br><br><br>
+
         <hr id="h2menu">
           <div class="sec">
             <a href="https://juanzulu.github.io/Desarrollo_fundamentos/">
@@ -123,9 +410,8 @@
               <img id="arrow" src="../imagenes/arrowmenu.png" alt="flecha">
             </button>
           </div>
-
     </div>
   </section>
-   
+  <script src="../js/mapaUniversidad.js"></script>
 </body>
 </html> 
